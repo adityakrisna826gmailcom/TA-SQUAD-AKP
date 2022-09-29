@@ -9,7 +9,7 @@ import cucumber.framework.connection.DriverSingleton;
 import cucumber.framework.constant.Constants;
 import cucumber.framework.utils.Utils;
 
-public class ViewExportPage {
+public class ViewExportPage extends LoginPage{
 
 	private WebDriver driver;
 	
@@ -19,14 +19,6 @@ public class ViewExportPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//input[@name='username']")
-	private WebElement username;
-	
-	@FindBy(xpath = "//input[@name='password']")
-	private WebElement password;
-	
-	@FindBy(xpath = "//button[@type='submit']")
-	private WebElement btnLogin;
 	
 	@FindBy(id = "datepicker")
 	private WebElement startDate;
@@ -38,7 +30,7 @@ public class ViewExportPage {
 	private WebElement btnFilter;
 	
 	@FindBy(xpath = "//span[normalize-space()='View & Export']")
-	private WebElement btnViewExport;
+	private WebElement viewExport;
 	
 	@FindBy(xpath = "//button[normalize-space()='Download']")
 	private WebElement btnDownload;
@@ -76,10 +68,14 @@ public class ViewExportPage {
 	@FindBy(xpath = "//h1[@class='page-header']")
 	private WebElement txtValidasiBack;
 	
+	@FindBy(xpath = "//h1[@class='page-header']")
+	private WebElement txtValidasiViewExport;
+	
+	
 	@FindBy(xpath = "//tbody/tr[1]/td[1]")
 	private WebElement txtValidasiFilter;
 	
-	@FindBy(xpath = "//th[normalize-space()='No']")
+	@FindBy(xpath = "//h1[@class='page-header']")
 	private WebElement txtValidasiRefresh;
 	
 	@FindBy(xpath = "//h4[normalize-space()='An uncaught Exception was encountered']")
@@ -104,14 +100,9 @@ public class ViewExportPage {
 	private WebElement lblName; //label name setelah login
 	
 	
-	public void filter(String user, String pass, String start, String end)
+	public void filter(String start, String end)
 	{
-		inputUsername(user);
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-		inputPassword(pass);
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-		btnLogin();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		
 		inputStartDate(start);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		inputEndDate(end);
@@ -121,39 +112,41 @@ public class ViewExportPage {
 		
 	}
 	
-	public void inputUsername(String user)
-	{
-		this.username.sendKeys(user);
-	}
-	
-	public void inputPassword(String pass)
-	{
-		this.username.sendKeys(pass);
-	}
 	
 	public void inputStartDate(String date)
 	{
 		this.startDate.sendKeys(date);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void inputEndDate(String end)
 	{
 		this.endDate.sendKeys(end);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void btnLogin()
+	public void btnViewExport()
 	{
-		this.btnLogin.click();
+		this.viewExport.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnFilter()
 	{
 		this.btnFilter.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnRefresh()
+	{
+		this.btnRefresh.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnDownload()
 	{
-		this.btnFilter.click();
+		this.btnDownload.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnPreviewData()
@@ -178,6 +171,10 @@ public class ViewExportPage {
 	
 	public String getTxtUserInfo() {
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, lblName);
+	}
+	
+	public String getTxtSuccessViewExport() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidasiViewExport);
 	}
 	
 	public String getTxtSuccessFilter() {

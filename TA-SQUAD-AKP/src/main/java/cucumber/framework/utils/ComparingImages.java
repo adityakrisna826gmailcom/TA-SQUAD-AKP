@@ -2,8 +2,9 @@ package cucumber.framework.utils;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
 import java.io.File;
+
+import javax.imageio.ImageIO;
 public class ComparingImages {
    public static void main(String[] args) throws Exception {
       BufferedImage img1 = ImageIO.read(new File("C:\\Users\\Nexsoft\\Pictures\\Testing\\Upload Foto Faskes Awal.jpg"));
