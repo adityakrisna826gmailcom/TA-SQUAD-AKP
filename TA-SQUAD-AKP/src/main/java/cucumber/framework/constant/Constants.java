@@ -13,5 +13,7 @@ public class Constants {
 	public static final String SAFARI = "Safari";
 	public static final String URL_SILOAM = "https://dev.ptdika.com/siloam/panel/login/";
 	public static final String URL_NOPC = "https://admin-demo.nopcommerce.com/";
+	public static final String URL_SILOAM_VIEW_ADMIN = "https://dev.ptdika.com/siloam/bd/export_data/do_view/350";
+	
 	
 }

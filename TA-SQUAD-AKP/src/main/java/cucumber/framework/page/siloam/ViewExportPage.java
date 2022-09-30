@@ -1,5 +1,6 @@
 package cucumber.framework.page.siloam;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -53,7 +54,7 @@ public class ViewExportPage extends LoginPage{
 	@FindBy(xpath = "//button[normalize-space()='Export']")
 	private WebElement btnExport;
 	
-	@FindBy(xpath = "//button[normalize-space()='Export']")
+	@FindBy(xpath = "//a[@id='preview']")
 	private WebElement btnPreviewData;
 	
 	@FindBy(xpath = "//a[@title='View Image After']//img")
@@ -62,8 +63,11 @@ public class ViewExportPage extends LoginPage{
 	@FindBy(xpath = "//a[@title='View Image Before']//img")
 	private WebElement btnBefore;
 	
-	@FindBy(xpath = "//a[@class='btn btn-danger']")
-	private WebElement btnBack;
+	@FindBy(linkText =  "Back")
+	private WebElement back;
+//	//a[@class='btn btn-danger']
+//	//*[@id="content"]/h1/a
+	
 	
 	@FindBy(xpath = "//h1[@class='page-header']")
 	private WebElement txtValidasiBack;
@@ -149,9 +153,22 @@ public class ViewExportPage extends LoginPage{
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
+	public void btnExport()
+	{
+		this.btnExport.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnView()
+	{
+		this.btnView.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
 	public void btnPreviewData()
 	{
 		this.btnPreviewData.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnBefore()
@@ -164,9 +181,22 @@ public class ViewExportPage extends LoginPage{
 		this.btnAfter.click();
 	}
 	
+	public void btnFaskesAwal()
+	{
+		this.btnFaskesAwal.click();
+	}
+	
+	public void btnFaskesTujuan()
+	{
+		this.btnFaskesTujuan.click();
+	}
+	
 	public void btnBack()
 	{
-		this.btnBack.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//		driver.findElement(By.linkText("Back")).click();
+		this.back.click();
+		
 	}
 	
 	public String getTxtUserInfo() {

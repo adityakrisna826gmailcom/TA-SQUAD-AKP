@@ -14,40 +14,37 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class TestDownload {
+public class TestExport {
 
 	private static WebDriver driver;
 	private static ExtentTest extentTest;
 	private ViewExportPage viewExportPage = new ViewExportPage();
 	
-	public TestDownload() {
+	public TestExport() {
 		driver = ViewExportHooks.driver;
 		extentTest = ViewExportHooks.extentTest;
 	}
 	
-	@Given("Siloam030 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
-	public void siloam030_admin_berada_di_halaman_view_export_dan_sudah_tekan_filter() {
+	@Given("Siloam035 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
+	public void siloam035_admin_berada_di_halaman_view_export_dan_sudah_tekan_filter() {
 		driver.get(Constants.URL_SILOAM);
 		viewExportPage.login("admindika", "d1k4@passw0rd");
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
 	    viewExportPage.filter("2022-09-14", "2022-09-18");
-	    extentTest.log(LogStatus.PASS, "Siloam030 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
+	    extentTest.log(LogStatus.PASS, "Siloam035 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
 	}
 
-	@When("Siloam030 Admin Tekan Tombol Download")
-	public void siloam030_admin_tekan_tombol_download() {
-		viewExportPage.btnDownload();
-		viewExportPage.filter("2022-09-8", "2022-09-10");
-		viewExportPage.btnDownload();
-	    extentTest.log(LogStatus.PASS, "Siloam030 Admin Tekan Tombol Download");
+	@When("Siloam035 Admin Tekan Tombol Export")
+	public void siloam035_admin_tekan_tombol_export() {
+		viewExportPage.btnExport();
+	    extentTest.log(LogStatus.PASS, "Siloam035 Admin Tekan Tombol Export");
 	}
 
-	@Then("Siloam030 Validasi An uncaught Exception was encountered")
-	public void siloam030_validasi_an_uncaught_exception_was_encountered() {
-//		String pathSatu = "C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\Download\\20220930.zip";
-//		String pathDua = "C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\Download\\20220930 (1).zip";
-//		assertEquals(Utils.getFileSize(pathSatu), Utils.getFileSize(pathDua));
+	@Then("Siloam035 Validasi Sukses Export")
+	public void siloam035_validasi_sukses_export() {
+//		String adminName = "C:\\Users\\NEXSOFT\\Downloads\\20220930.zip";
+//		assertEquals(Utils.getCurrentDateWithoutStrip() + ".zip",Utils.getFileNameWithExt(adminName));
 //		extentTest.log(LogStatus.PASS, "Siloam025 Siloam030 Validasi An uncaught Exception was encountered");
 	}
 }

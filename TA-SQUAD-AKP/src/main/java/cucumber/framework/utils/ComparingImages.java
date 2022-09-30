@@ -7,8 +7,9 @@ import java.io.File;
 import javax.imageio.ImageIO;
 public class ComparingImages {
    public static void main(String[] args) throws Exception {
-      BufferedImage img1 = ImageIO.read(new File("C:\\Users\\Nexsoft\\Pictures\\Testing\\Upload Foto Faskes Awal.jpg"));
-      BufferedImage img2 = ImageIO.read(new File("C:\\Users\\Nexsoft\\Pictures\\Testing\\Upload Foto Faskes Awal (2).jpg"));
+      BufferedImage img1 = ImageIO.read(new File("C:\\Users\\NEXSOFT\\Pictures\\Screenshots\\Testing Upload\\Screenshot (9).png"));
+      BufferedImage img2 = ImageIO.read(new File("C:\\Users\\NEXSOFT\\Pictures\\Screenshots\\Testing Upload\\Screenshot (9).png"));
+//      BufferedImage img2 = ImageIO.read(new File("C:\\Users\\NEXSOFT\\Pictures\\Screenshots\\Testing Upload\\Download\\Picture 9.png"));
       int w1 = img1.getWidth();
       int w2 = img2.getWidth();
       int h1 = img1.getHeight();

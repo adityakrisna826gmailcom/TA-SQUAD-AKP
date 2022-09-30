@@ -52,7 +52,6 @@ public class Utils {
 				.until(ExpectedConditions.visibilityOf(element)).getText();
 	}
 	
-	
 	public static void scrollByVisibleElement(WebElement element, WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
@@ -130,6 +129,42 @@ public class Utils {
 		strTemp = strRandomString.toString().substring(0,strRandomString.length()-1);
 		
 		return strTemp;
+	}
+	
+	public static String getFileNameWithExt(String path) {
+		String fileName = "";
+		File f = new File(path);
+//		String extFile = FilenameUtils.getExtension(path); // returns "txt"
+        if(f.exists()){
+            fileName = f.getName();
+        }else{
+            fileName = "The File does not exist";
+        }
+		return fileName;
+	}
+	
+	public static String getCurrentDate() {
+		String currentDate = "";
+		currentDate = java.time.LocalDate.now().toString();
+		return currentDate;
+	}
+	
+	public static String getCurrentDateWithoutStrip() {
+		String currentDate = "";
+		currentDate = java.time.LocalDate.now().toString();
+		currentDate = currentDate.replaceAll("-", "");
+		return currentDate;
+	}
+	
+	public static long getFileSize(String path) {
+		long fileSize = 0l;
+		File f = new File(path);
+		if(f.exists()){
+			fileSize = f.length();
+		}else{
+			fileSize = 0l;
+		}
+		return fileSize;
 	}
 	
 	public static String generateDate() {

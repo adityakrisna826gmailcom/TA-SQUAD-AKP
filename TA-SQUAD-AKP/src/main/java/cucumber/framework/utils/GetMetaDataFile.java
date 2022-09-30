@@ -8,8 +8,8 @@ public class GetMetaDataFile {
 
 	
 	public static void main(String[] args) {
-		File f = new File("C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\JCB Test Scenario.xlsx");
-		String extFile = FilenameUtils.getExtension("C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\Magang SQA nexSOFT Batch - 2.xlsx"); // returns "txt"
+		File f = new File("C:\\\\Users\\\\NEXSOFT\\\\Downloads\\\\20220930.zip");
+		String extFile = FilenameUtils.getExtension("C:\\\\\\\\Users\\\\\\\\NEXSOFT\\\\\\\\Downloads\\\\\\\\20220930.zip"); // returns "txt"
         if(f.exists()){
             System.out.println("Name: "+ f.getName());
             System.out.println("Path: "+ f.getAbsolutePath());
