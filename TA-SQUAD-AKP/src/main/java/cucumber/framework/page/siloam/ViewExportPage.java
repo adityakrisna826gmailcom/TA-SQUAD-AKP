@@ -36,13 +36,21 @@ public class ViewExportPage extends LoginPage{
 	@FindBy(xpath = "//button[normalize-space()='Download']")
 	private WebElement btnDownload;
 	
-	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[7]/a[1]")
+//	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[7]/a[1]")
+//	private WebElement btnFaskesAwal;
+	
+	@FindBy(linkText = "Foto Faskes Awal")
 	private WebElement btnFaskesAwal;
+	//tbody/tr[1]/td[8]/a[1]
 	
-	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[8]/a[1]")
+//	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[8]/a[1]")
+//	private WebElement btnFaskesTujuan;
+	
+	@FindBy(linkText = "Foto Faskes Tujuan")
 	private WebElement btnFaskesTujuan;
+	//tbody/tr[1]/td[8]/a[1]
 	
-	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[9]/a[1]")
+	@FindBy(linkText = "PDF Agreement")
 	private WebElement btnPDfAgreement;
 	
 	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/a[1]")
@@ -62,6 +70,9 @@ public class ViewExportPage extends LoginPage{
 	
 	@FindBy(xpath = "//a[@title='View Image Before']//img")
 	private WebElement btnBefore;
+	
+	@FindBy(id = "title")
+	private WebElement txtValidasiPDF;
 	
 	@FindBy(linkText =  "Back")
 	private WebElement back;
@@ -174,28 +185,38 @@ public class ViewExportPage extends LoginPage{
 	public void btnBefore()
 	{
 		this.btnBefore.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnAfter()
 	{
 		this.btnAfter.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnFaskesAwal()
 	{
 		this.btnFaskesAwal.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnFaskesTujuan()
 	{
 		this.btnFaskesTujuan.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnPDFAgreement()
+	{
+		this.btnPDfAgreement.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnBack()
 	{
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 //		driver.findElement(By.linkText("Back")).click();
 		this.back.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		
 	}
 	
@@ -241,6 +262,10 @@ public class ViewExportPage extends LoginPage{
 	
 	public String getTxtInvalidExportEmpty() {
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtInvalidExportEmpty);
+	}
+	
+	public String getTxtValidPDF() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidasiPDF);
 	}
 	
 }

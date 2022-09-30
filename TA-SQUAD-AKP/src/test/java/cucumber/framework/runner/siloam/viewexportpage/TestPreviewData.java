@@ -1,12 +1,20 @@
 package cucumber.framework.runner.siloam.viewexportpage;
 
+import static org.testng.Assert.assertTrue;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.WebDriver;
 
+import com.mongodb.util.Util;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
 import cucumber.framework.page.siloam.ViewExportPage;
+import cucumber.framework.utils.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,15 +40,21 @@ public class TestPreviewData {
 	}
 
 	@When("Siloam050 Admin Tekan Tombol Preview Data")
-	public void siloam050_admin_tekan_tombol_preview_data() {
+	public void siloam050_admin_tekan_tombol_preview_data() throws AWTException {
 		viewExportPage.btnPreviewData();
+		Utils.tabEnter();
+		driver.get(Constants.URL_SILOAM_VIEW_ADMIN);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		viewExportPage.btnPreviewData();
+		Utils.tabEnter();
 		extentTest.log(LogStatus.PASS, "Siloam050 Admin Sudah Login Dan Berada Di Halaman View Data");
 	}
 
 	@Then("Siloam050 Validasi Data Pada Dokumen PDF")
 	public void siloam050_validasi_data_pada_dokumen_pdf() {
-//		String pathDua = "C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\Download\\20220930 (1).zip";
-//		assertEquals(Utils.getFileSize(pathSatu), Utils.getFileSize(pathDua));
-//		extentTest.log(LogStatus.PASS, "Siloam025 Siloam030 Validasi An uncaught Exception was encountered");
+		String pathSatu = "C:\\Users\\NEXSOFT\\Downloads\\20220930 (1).zip";
+		String pathDua = "C:\\Users\\NEXSOFT\\Downloads\\20220930 (1).zip";
+		assertTrue(Utils.getFileSize(pathSatu) == Utils.getFileSize(pathDua));
+		extentTest.log(LogStatus.PASS, "Siloam025 Siloam030 Validasi An uncaught Exception was encountered");
 	}
 }

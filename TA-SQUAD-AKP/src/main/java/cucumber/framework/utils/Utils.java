@@ -19,6 +19,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import cucumber.framework.constant.Constants;
+
 public class Utils {
 
 	public static int testCount = 0;
@@ -200,5 +202,23 @@ public class Utils {
 		}
 		
 		return strTemp;
+	}
+	
+	public static void tabEnter() throws AWTException
+	{
+		Robot robot = new Robot();
+		for(int i =0; i < 8; i++)
+		{
+			robot.keyPress(KeyEvent.VK_TAB);
+			robot.keyRelease(KeyEvent.VK_TAB);
+			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		}
+		
+		for(int i =0; i < 2; i++)
+		{
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		}
 	}
 }

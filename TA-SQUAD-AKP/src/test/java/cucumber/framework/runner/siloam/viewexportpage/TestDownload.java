@@ -1,6 +1,7 @@
 package cucumber.framework.runner.siloam.viewexportpage;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 
 import org.openqa.selenium.WebDriver;
 
@@ -45,9 +46,9 @@ public class TestDownload {
 
 	@Then("Siloam030 Validasi An uncaught Exception was encountered")
 	public void siloam030_validasi_an_uncaught_exception_was_encountered() {
-//		String pathSatu = "C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\Download\\20220930.zip";
-//		String pathDua = "C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\Download\\20220930 (1).zip";
-//		assertEquals(Utils.getFileSize(pathSatu), Utils.getFileSize(pathDua));
-//		extentTest.log(LogStatus.PASS, "Siloam025 Siloam030 Validasi An uncaught Exception was encountered");
+		String pathSatu = "C:\\Users\\NEXSOFT\\Downloads\\20220930.zip";
+		String pathDua = "C:\\Users\\NEXSOFT\\Downloads\\20220930 (1).zip";
+		assertFalse(Utils.getFileSize(pathSatu) == Utils.getFileSize(pathDua));
+		extentTest.log(LogStatus.PASS, "Siloam030 Validasi An uncaught Exception was encountered");
 	}
 }

@@ -1,6 +1,7 @@
 package cucumber.framework.runner.siloam.viewexportpage;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 
 import org.openqa.selenium.WebDriver;
 
@@ -38,13 +39,16 @@ public class TestExport {
 	@When("Siloam035 Admin Tekan Tombol Export")
 	public void siloam035_admin_tekan_tombol_export() {
 		viewExportPage.btnExport();
+		viewExportPage.filter("2022-09-8", "2022-09-10");
+		viewExportPage.btnExport();
 	    extentTest.log(LogStatus.PASS, "Siloam035 Admin Tekan Tombol Export");
 	}
 
 	@Then("Siloam035 Validasi Sukses Export")
 	public void siloam035_validasi_sukses_export() {
-//		String adminName = "C:\\Users\\NEXSOFT\\Downloads\\20220930.zip";
-//		assertEquals(Utils.getCurrentDateWithoutStrip() + ".zip",Utils.getFileNameWithExt(adminName));
-//		extentTest.log(LogStatus.PASS, "Siloam025 Siloam030 Validasi An uncaught Exception was encountered");
+		String pathSatu = "C:\\Users\\NEXSOFT\\Downloads\\data_export.xls";
+		String pathDua = "C:\\Users\\NEXSOFT\\Downloads\\data_export (1).xls";
+		assertFalse(Utils.getFileSize(pathSatu) == Utils.getFileSize(pathDua));
+		extentTest.log(LogStatus.PASS, "Siloam035 Validasi Sukses Export");
 	}
 }

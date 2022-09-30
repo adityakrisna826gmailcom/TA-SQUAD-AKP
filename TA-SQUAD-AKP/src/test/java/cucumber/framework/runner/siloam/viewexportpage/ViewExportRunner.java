@@ -6,14 +6,16 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 features = {
-//		"src/test/resources/Features/Siloam/020AdminMelihatDataKaryawan.feature", 
-//		"src/test/resources/Features/Siloam/025AdminMelakukanRefresh.feature",
-//		"src/test/resources/Features/Siloam/030AdminMelakukanDownload.feature",
-//		"src/test/resources/Features/Siloam/035AdminMelakukanExport.feature",
-//		"src/test/resources/Features/Siloam/040AdminMenekanView.feature",
-//		"src/test/resources/Features/Siloam/045AdminMenekanTombolBack.feature",
+		"src/test/resources/Features/Siloam/020AdminMelihatDataKaryawan.feature", 
+		"src/test/resources/Features/Siloam/025AdminMelakukanRefresh.feature",
+		"src/test/resources/Features/Siloam/030AdminMelakukanDownload.feature",
+		"src/test/resources/Features/Siloam/035AdminMelakukanExport.feature",
+		"src/test/resources/Features/Siloam/040AdminMenekanView.feature",
+		"src/test/resources/Features/Siloam/045AdminMenekanTombolBack.feature",
 		"src/test/resources/Features/Siloam/050AdminMenekanPreviewData.feature",
-		"src/test/resources/Features/Siloam/055AdminMenekanLinkFotoFaskesAwal.feature"
+//		"src/test/resources/Features/Siloam/055AdminMenekanLinkFotoFaskesAwal.feature",
+//		"src/test/resources/Features/Siloam/060AdminMenekanLinkFotoFaskesTujuan.feature",
+		"src/test/resources/Features/Siloam/065AdminMenekanLinkPDFAgreement.feature"
 		},
 glue = "cucumber.framework.runner.siloam.viewexportpage",
 monochrome=true,

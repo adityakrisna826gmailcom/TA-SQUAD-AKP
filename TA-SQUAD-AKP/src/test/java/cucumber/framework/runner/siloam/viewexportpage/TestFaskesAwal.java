@@ -1,6 +1,9 @@
 package cucumber.framework.runner.siloam.viewexportpage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -35,6 +38,11 @@ public class TestFaskesAwal {
 	@When("Siloam055 Admin Tekan Link Faskes Awal")
 	public void siloam055_admin_tekan_link_faskes_awal() {
 		viewExportPage.btnFaskesAwal();
+		
+//		Actions actions = new Actions(driver);
+//		WebElement elementLocator = driver.findElement(By.cssSelector("img[src='https://dev.ptdika.com/siloam/upload/dokumen/350/350_Before_c89e27a00e06626438c07e03607a94ed.png']"));
+//		actions.contextClick(elementLocator).perform();
+		
 		extentTest.log(LogStatus.PASS, "Siloam055 Admin Tekan Link Faskes Awal");
 	}
 
