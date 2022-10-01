@@ -6,7 +6,7 @@
       <class name="cucumber.framework.runner.siloam.viewexportpage.ViewExportRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="2"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- cucumber.framework.runner.siloam.viewexportpage.ViewExportRunner -->
