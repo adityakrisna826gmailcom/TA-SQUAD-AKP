@@ -16,8 +16,8 @@ public enum SiloamViewExport {
 	T5("Siloam040 Admin Menekan View"),
 	T6("Siloam045 Admin Menekan Back"),
 	T7("Siloam050 Admin Menekan Preview Data"),
-	T8("Siloam055 Admin Tekan Faskes Awal"),
-	T9("Siloam060 Admin Tekan Faskes Tujuan"),
+//	T8("Siloam055 Admin Tekan Faskes Awal"),
+//	T9("Siloam060 Admin Tekan Faskes Tujuan"),
 	T10("Siloam065 Admin Tekan PDF Agreement");
 	
 	private String testName;
