@@ -18,7 +18,7 @@ import cucumber.framework.connection.DriverSingleton;
 import cucumber.framework.constant.Constants;
 import cucumber.framework.utils.Utils;
 
-public class FormReturnPage {
+public class FormReturnPage extends ViewExportPage{
 
 private WebDriver driver;
 	
@@ -28,14 +28,17 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
+	//span[normalize-space()='New']
+	@FindBy(xpath = "//span[normalize-space()='New']")
+	private WebElement btnNew;
 	
-	@FindBy(id = "//input[@id='tgl']")
+	@FindBy(xpath = "//input[@id='tgl']")
 	private WebElement startDate;
 	
 	@FindBy(xpath = "//td[@class='day'][normalize-space()='3']")
 	private WebElement pilihTanggalStart;
 	
-	@FindBy(id = "//input[@id='tgl2']")
+	@FindBy(xpath = "//input[@id='tgl2']")
 	private WebElement endDate;
 	
 	@FindBy(xpath = "//span[@id='select2-status-container']")
@@ -98,14 +101,6 @@ private WebDriver driver;
 	@FindBy(xpath = "//i[@class='fa fa-history']")
 	private WebElement refresh;
 	
-	//td[normalize-space()='2231111111111']
-	//td[normalize-space()='2873834376475']
-	
-	//td[normalize-space()='ADSFS']
-	//td[normalize-space()='sadssd']
-	//td[normalize-space()='sadsfd']
-	//td[normalize-space()='Clinic Robson']
-	//tr[@class='even']//td[contains(text(),'ALAMANDA CATHARTICA FLORENCEA')]
 	
 	
 	public void filterPending(String pending)
@@ -130,14 +125,14 @@ private WebDriver driver;
 	
 	public void filterComplete(String complete)
 	{
-		btnStartDate();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-		btnPilihTanggalStart();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-		btnEndDate();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-		btnPilihTanggalEnd();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//		btnStartDate();
+//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//		btnPilihTanggalStart();
+//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//		btnEndDate();
+//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//		btnPilihTanggalEnd();
+//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		btnStatus();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		
@@ -171,40 +166,55 @@ private WebDriver driver;
 	public void btnStartDate()
 	{
 		this.startDate.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
+	
+	public void btnNew()
+	{
+		this.btnNew.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
 	public void inputStartDate(String start)
 	{
-		this.startDate.sendKeys(start);;
+		this.startDate.sendKeys(start);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnEndDate()
 	{
 		this.endDate.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void inputEndDate(String end)
 	{
 		this.endDate.sendKeys(end);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnPilihTanggalStart()
 	{
 		this.pilihTanggalStart.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnPilihTanggalEnd()
 	{
 		this.pilihTanggalEnd.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnStatus()
 	{
 		this.status.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnFilter()
 	{
 		this.filter.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public void btnReset()

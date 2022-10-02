@@ -23,7 +23,9 @@ features = {
 		"src/test/resources/Features/Siloam/050AdminMenekanPreviewData.feature",
 //		"src/test/resources/Features/Siloam/055AdminMenekanLinkFotoFaskesAwal.feature",
 //		"src/test/resources/Features/Siloam/060AdminMenekanLinkFotoFaskesTujuan.feature",
-		"src/test/resources/Features/Siloam/065AdminMenekanLinkPDFAgreement.feature"
+		"src/test/resources/Features/Siloam/065AdminMenekanLinkPDFAgreement.feature",
+		"src/test/resources/Features/Siloam/075AdminMenekanTombolExportInvalid.feature",
+		"src/test/resources/Features/Siloam/080AdminMenekanTombolDownload.feature"
 		},
 glue = "cucumber.framework.runner.siloam.viewexportpage",
 monochrome=true,

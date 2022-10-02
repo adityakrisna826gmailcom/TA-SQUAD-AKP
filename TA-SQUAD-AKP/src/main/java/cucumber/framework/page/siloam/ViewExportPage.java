@@ -114,7 +114,7 @@ public class ViewExportPage extends LoginPage{
 	@FindBy(xpath = "//strong[normalize-space()='Danger!']")
 	private WebElement txtInvalidDownloadEmpty;
 	
-	@FindBy(xpath = "//strong[normalize-space()='Danger!']")
+	@FindBy(xpath = "//div[@role='alert']")
 	private WebElement txtInvalidExportEmpty;
 	
 	@FindBy(xpath = "//h1[@class='page-header']")
@@ -133,7 +133,15 @@ public class ViewExportPage extends LoginPage{
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		btnFilter();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void inputStartEndDate(String start, String end)
+	{
 		
+		inputStartDate(start);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		inputEndDate(end);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	
@@ -143,10 +151,18 @@ public class ViewExportPage extends LoginPage{
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
+	public WebElement getInputStartdate() {
+		return this.startDate;
+	}
+	
 	public void inputEndDate(String end)
 	{
 		this.endDate.sendKeys(end);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public WebElement getInputEnddate() {
+		return this.endDate;
 	}
 	
 	public void btnViewExport()
@@ -277,4 +293,8 @@ public class ViewExportPage extends LoginPage{
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidasiPDF);
 	}
 	
+	public Boolean isHaveRequired(WebElement element) {
+		boolean isHaveRequired = Boolean.parseBoolean(element.getAttribute("required"));
+		return isHaveRequired;
+	}
 }
