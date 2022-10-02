@@ -12,7 +12,9 @@ updated_date : -
 
 
 @CucumberOptions(
-features = {"src/test/resources/Features/Siloam/085FormReturnSalesFilter.feature"},
+features = {
+//		"src/test/resources/Features/Siloam/085FormReturnSalesFilter.feature",
+		"src/test/resources/Features/Siloam/090FormReturnSalesShowPage.feature"},
 glue = "cucumber.framework.runner.siloam.formreturnpage",
 monochrome=true,
 plugin = {"pretty","html:target/siloam/htmlreport/FormReturnFilterPage.html",

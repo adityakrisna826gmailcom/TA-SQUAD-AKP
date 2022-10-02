@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-02T13:43:39 WIB" name="Default suite" finished-at="2022-10-02T13:44:01 WIB" duration-ms="21784">
+  <suite started-at="2022-10-03T00:08:21 WIB" name="Default suite" finished-at="2022-10-03T00:09:07 WIB" duration-ms="46199">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-10-02T13:43:39 WIB" name="Default test" finished-at="2022-10-02T13:44:01 WIB" duration-ms="21784">
+    <test started-at="2022-10-03T00:08:21 WIB" name="Default test" finished-at="2022-10-03T00:09:07 WIB" duration-ms="46199">
       <class name="cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-02T13:43:39 WIB" name="setUpClass" finished-at="2022-10-02T13:43:40 WIB" duration-ms="745" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T00:08:21 WIB" name="setUpClass" finished-at="2022-10-03T00:08:21 WIB" duration-ms="749" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@53125718]]>
+                <![CDATA[org.testng.TestRunner@1753475d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-02T13:43:40 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-02T13:44:00 WIB" duration-ms="19539" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T00:08:21 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T00:08:39 WIB" duration-ms="17401" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Siloam085 Form Return Sales Input Start End Date Tekan Filter Complete"]]>
+                <![CDATA["Siloam090 Form Return Sales Show Page Dua Puluh Lima"]]>
               </value>
             </param>
             <param index="1">
@@ -34,29 +34,42 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.support.ui.UnexpectedTagNameException">
-            <message>
-              <![CDATA[Element should have been "select" but was "span"
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'DESKTOP-KFF6RM1', ip: '192.168.1.121', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
-Driver info: driver.version: unknown]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been "select" but was "span"
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'DESKTOP-KFF6RM1', ip: '192.168.1.121', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.Select.<init>(Select.java:49)
-at cucumber.framework.page.siloam.FormReturnPage.filterComplete(FormReturnPage.java:139)
-at cucumber.framework.runner.siloam.formreturnpage.TestFormReturnFilter.siloam085_sales_input_status_complete(TestFormReturnFilter.java:60)
-at ✽.Siloam085 Sales Input Status Complete(file:///C:/Users/NEXSOFT/Documents/GitHub/TA_SQA/TA-SQUAD-AKP/src/test/resources/Features/Siloam/085FormReturnSalesFilter.feature:12)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.support.ui.UnexpectedTagNameException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-02T13:44:00 WIB" name="tearDownClass" finished-at="2022-10-02T13:44:01 WIB" duration-ms="1445" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T00:08:39 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T00:08:53 WIB" duration-ms="14041" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam090 Form Return Sales Show Page Dua Puluh Lima Next"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Form Return Sales Filter"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T00:08:53 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T00:09:05 WIB" duration-ms="12444" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam090 Form Return Sales Show Page Dua Puluh Lima Previous"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Form Return Sales Filter"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T00:09:05 WIB" name="tearDownClass" finished-at="2022-10-03T00:09:07 WIB" duration-ms="1506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -28,7 +28,6 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	//span[normalize-space()='New']
 	@FindBy(xpath = "//span[normalize-space()='New']")
 	private WebElement btnNew;
 	
@@ -40,8 +39,7 @@ private WebDriver driver;
 	
 	@FindBy(xpath = "//span[@class='month active']")
 	private WebElement pilihSeptember;
-	//th[normalize-space()='October 2022']
-	//span[@class='month active']
+
 	@FindBy(xpath = "//div[@class='datepicker-days']//th[@class='prev'][normalize-space()='«']")
 	private WebElement pilihBack;
 	
@@ -69,8 +67,6 @@ private WebDriver driver;
 	
 	@FindBy(xpath = "//td[normalize-space()='1']")
 	private WebElement txtValidasiFilter;
-	
-	//input[@id='tgl']
 	
 	@FindBy(xpath = "//select[@name='table_length']")
 	private WebElement show;
@@ -174,23 +170,11 @@ private WebDriver driver;
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-//	public void inputStartDate(String start)
-//	{
-//		this.startDate.sendKeys(start);
-//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-//	}
-	
 	public void btnEndDate()
 	{
 		this.endDate.click();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
-	
-//	public void inputEndDate(String end)
-//	{
-//		this.endDate.sendKeys(end);
-//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-//	}
 	
 	public void btnPilihTanggalStart()
 	{
@@ -241,5 +225,87 @@ private WebDriver driver;
 	public String getTxtEndDate() {
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, endDate);
 	}
+	
+	
+//SHOW PAGE SEPULUH
+	
+	public void btnShow()
+	{
+		this.show.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnNext()
+	{
+		this.next.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnPrevious()
+	{
+		this.previous.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void pilihSepuluh(String sepuluh)
+	{
+		btnShow();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		
+		Select sPilih = new Select(show);
+		sPilih.selectByValue(sepuluh);
+		
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void pilihDuaLima(String duaLima)
+	{
+		btnShow();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		
+		Select sPilih = new Select(show);
+		sPilih.selectByValue(duaLima);
+		
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+//	public void scrollBottom()
+//	{
+//		Utils.scrollDownToButtom(driver);
+//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//	}
+	
+	public String getTxtSepuluh() {
+		Utils.scrollDownToButtom(driver);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowSepuluh);
+	}
+	
+	public String getTxtDuaLima() {
+		Utils.scrollDownToButtom(driver);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowDuaLima);
+	}
+	
+	public String getTxtSepuluhPrevious() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowSepuluh);
+	}
+	
+	public String getTxtDuaLimaPrevious() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowDuaLima);
+	}
+	
+	public String getTxtSebelas() {
+		Utils.scrollByVisibleElement(txtValidNextSepuluh, driver);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidNextSepuluh);
+	}
+	
+	public String getTxtDuaEnam() {
+		Utils.scrollByVisibleElement(txtValidNextDualima, driver);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidNextDualima);
+	}
+	
+	
 
 }

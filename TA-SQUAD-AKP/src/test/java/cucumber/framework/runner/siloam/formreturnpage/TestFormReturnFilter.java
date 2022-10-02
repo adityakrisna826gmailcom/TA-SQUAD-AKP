@@ -73,8 +73,8 @@ public class TestFormReturnFilter {
 
 	@Then("Siloam085 Validasi data complete tampil pada halaman form return")
 	public void siloam085_validasi_data_complete_tampil_pada_halaman_form_return() {
-		String adminName = "1";
-		assertEquals(formReturnPage.getTxtSuccessFilter(), adminName);
+		String txtExpected = "1";
+		assertEquals(formReturnPage.getTxtSuccessFilter(), txtExpected);
 		extentTest.log(LogStatus.PASS, "Siloam085 Validasi data complete tampil pada halaman form return");
 	}
 	
@@ -98,10 +98,10 @@ public class TestFormReturnFilter {
 
 	@Then("Siloam085 Validasi Start Date End Date Kosong")
 	public void siloam085_validasi_start_date_end_date_kosong() {
-		String msgError = "";
-		String msgErrorDua = "";
-		assertTrue(formReturnPage.getTxtStartDate().contains(msgError));
-		assertTrue(formReturnPage.getTxtEndDate().contains(msgErrorDua));
+		String txtExpected = "";
+		String txtExpectedDua = "";
+		assertTrue(formReturnPage.getTxtStartDate().contains(txtExpected));
+		assertTrue(formReturnPage.getTxtEndDate().contains(txtExpectedDua));
 		extentTest.log(LogStatus.PASS, "Siloam085 Validasi Sukses Export Start End Date Empty");
 	}
 	
@@ -144,8 +144,8 @@ public class TestFormReturnFilter {
 
 	@Then("Siloam085 Validasi Data Pending Tampil Pada Halaman Form Return")
 	public void siloam085_validasi_data_pending_tampil_pada_halaman_form_return() {
-		String adminName = "1";
-		assertEquals(formReturnPage.getTxtSuccessFilter(), adminName);
+		String txtExpected = "1";
+		assertEquals(formReturnPage.getTxtSuccessFilter(), txtExpected);
 		extentTest.log(LogStatus.PASS, "Siloam085 Validasi Data Pending Tampil Pada Halaman Form Return");
 	}
 	
@@ -168,10 +168,10 @@ public class TestFormReturnFilter {
 
 	@Then("Siloam085 Validasi Start Date End Date Kosong Pending")
 	public void siloam085_validasi_start_date_end_date_kosong_pending() {
-		String msgError = "";
-		String msgErrorDua = "";
-		assertTrue(formReturnPage.getTxtStartDate().contains(msgError));
-		assertTrue(formReturnPage.getTxtEndDate().contains(msgErrorDua));
+		String txtExpected = "";
+		String txtExpectedDua = "";
+		assertTrue(formReturnPage.getTxtStartDate().contains(txtExpected));
+		assertTrue(formReturnPage.getTxtEndDate().contains(txtExpectedDua));
 		extentTest.log(LogStatus.PASS, "Siloam085 Validasi Start Date End Date Kosong Pending");
 	}
 	
@@ -208,8 +208,8 @@ public class TestFormReturnFilter {
 
 	@Then("Siloam085 Validasi Data Pilih Tampil Pada Halaman Form Return")
 	public void siloam085_validasi_data_pilih_tampil_pada_halaman_form_return() {
-		String adminName = "1";
-		assertEquals(formReturnPage.getTxtSuccessFilter(), adminName);
+		String txtExpected = "1";
+		assertEquals(formReturnPage.getTxtSuccessFilter(), txtExpected);
 		extentTest.log(LogStatus.PASS, "Siloam085 Validasi Data Pilih Tampil Pada Halaman Form Return");
 	}
 	
@@ -232,10 +232,10 @@ public class TestFormReturnFilter {
 
 	@Then("Siloam085 Validasi Start Date End Date Kosong Pilih")
 	public void siloam085_validasi_start_date_end_date_kosong_pilih() {
-		String msgError = "";
-		String msgErrorDua = "";
-		assertTrue(formReturnPage.getTxtStartDate().contains(msgError));
-		assertTrue(formReturnPage.getTxtEndDate().contains(msgErrorDua));
+		String txtExpected = "";
+		String txtExpectedDua = "";
+		assertTrue(formReturnPage.getTxtStartDate().contains(txtExpected));
+		assertTrue(formReturnPage.getTxtEndDate().contains(txtExpectedDua));
 		extentTest.log(LogStatus.PASS, "Siloam085 Validasi Start Date End Date Kosong Pilih");
 	}
 }
