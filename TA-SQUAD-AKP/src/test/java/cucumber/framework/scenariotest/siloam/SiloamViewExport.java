@@ -22,7 +22,8 @@ public enum SiloamViewExport {
 	T11("Siloam075 Admin Tekan Export Start End Date Empty"),
 	T12("Siloam075 Admin Tekan Export Data Empty"),
 	T13("Siloam080 Admin Tekan Download Start End Date Empty"),
-	T14("Siloam080 Admin Tekan Download Data Empty");
+	T14("Siloam080 Admin Tekan Download Data Empty"),
+	;
 	
 	private String testName;
 	

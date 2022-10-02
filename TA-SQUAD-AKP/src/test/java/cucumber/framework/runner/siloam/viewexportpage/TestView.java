@@ -1,5 +1,8 @@
 package cucumber.framework.runner.siloam.viewexportpage;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 /*
 created_by : Adit
 created_date : 30/09/2022
@@ -33,10 +36,14 @@ public class TestView {
 	@Given("Siloam040 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
 	public void siloam040_admin_berada_di_halaman_view_export_dan_sudah_tekan_filter() {
 		driver.get(Constants.URL_SILOAM);
-		viewExportPage.login("admindika", "d1k4@passw0rd");
+		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM, Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
-	    viewExportPage.filter("2022-09-14", "2022-09-18");
+	    
+	    String startDate = "2022-09-14";
+	    String endDate = "2022-09-18";
+	    
+	    viewExportPage.filter(startDate,endDate);
 	    extentTest.log(LogStatus.PASS, "Siloam040 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
 	}
 
@@ -48,8 +55,8 @@ public class TestView {
 
 	@Then("Siloam040 Validasi kata View Data")
 	public void siloam040_validasi_kata_view_data() {
-//		String adminName = "C:\\Users\\NEXSOFT\\Downloads\\20220930.zip";
-//		assertEquals(Utils.getCurrentDateWithoutStrip() + ".zip",Utils.getFileNameWithExt(adminName));
-//		extentTest.log(LogStatus.PASS, "Siloam040 Validasi kata View Data");
+		String txtExpected = "View & Export";
+		assertTrue(viewExportPage.getTxtSuccessView().contains(txtExpected));
+		extentTest.log(LogStatus.PASS, "Siloam040 Validasi kata View Data");
 	}
 }

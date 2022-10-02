@@ -1,5 +1,12 @@
 package cucumber.framework.runner.siloam.viewexportpageoutline;
 
+/*
+created_by : Adit
+created_date : 30/09/2022
+updated_by : -
+updated_date : -
+*/
+
 import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.WebDriver;
@@ -29,7 +36,7 @@ public class TestViewExportInvalidOutline {
 	@When("Siloam070 Admin Sudah Login Dan Berada Di Dalam Halaman View Dan Export")
 	public void siloam070_admin_sudah_login_dan_berada_di_dalam_halaman_view_dan_export() {
 		driver.get(Constants.URL_SILOAM);
-	    viewExportPage.login("admindika", "d1k4@passw0rd");
+	    viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM,Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
 	    extentTest.log(LogStatus.PASS, "Siloam070 Admin Sudah Login Dan Berada Di Dalam Halaman View Dan Export");
@@ -40,10 +47,9 @@ public class TestViewExportInvalidOutline {
 	public void siloam070_admin_memasukkan_start_date_end_date(String startdate, String enddate) {
 		if(startdate == "") {
 			strStart = "";
-		} else if(enddate == "") {
-			strEnd = "";
-		} else {
-			strStart = "";
+		} 
+		
+		if(enddate == "") {
 			strEnd = "";
 		}
 		
@@ -59,13 +65,12 @@ public class TestViewExportInvalidOutline {
 
 	@Then("Siloam070 Validasi Start Date End Date Kosong")
 	public void siloam070_validasi_start_date_end_date_kosong() {
-		if(strStart == "" && strEnd == "") {
-			assertTrue(viewExportPage.isHaveRequired(viewExportPage.getInputStartdate()));
+		if(strEnd == "") {
 			assertTrue(viewExportPage.isHaveRequired(viewExportPage.getInputEnddate()));
-		} else if(strStart == "") {
+		}
+		
+		if(strStart == "") {
 			assertTrue(viewExportPage.isHaveRequired(viewExportPage.getInputStartdate()));
-		} else {
-			assertTrue(viewExportPage.isHaveRequired(viewExportPage.getInputEnddate()));
 		}
 		
 		extentTest.log(LogStatus.PASS, "Siloam070 Validasi Start Date End Date Kosong");

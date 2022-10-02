@@ -62,6 +62,7 @@ public class ViewExportPage extends LoginPage{
 	@FindBy(linkText = "PDF Agreement")
 	private WebElement btnPDfAgreement;
 	
+	
 	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/a[1]")
 	private WebElement btnView;
 	

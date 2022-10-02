@@ -33,7 +33,7 @@ public class TestFaskesTujuan {
 	@Given("Siloam060 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
 	public void siloam060_admin_berada_di_halaman_view_export_dan_sudah_tekan_filter() {
 		driver.get(Constants.URL_SILOAM);
-		viewExportPage.login("admindika", "d1k4@passw0rd");
+		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM, Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
 	    viewExportPage.filter("2022-09-14", "2022-09-18");

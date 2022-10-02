@@ -29,7 +29,7 @@ public class TestExportInvalid {
 	@Given("Siloam075 Admin Berada Di Halaman View Export")
 	public void siloam075_admin_berada_di_halaman_view_export() {
 		driver.get(Constants.URL_SILOAM);
-		viewExportPage.login("admindika", "d1k4@passw0rd");
+		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM,Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
 	    extentTest.log(LogStatus.PASS, "Siloam075 Admin Berada Di Halaman View Export");
@@ -43,8 +43,8 @@ public class TestExportInvalid {
 
 	@Then("Siloam075 Validasi Sukses Export Start End Date Empty")
 	public void siloam075_validasi_sukses_export_start_end_date_empty() {
-		String adminName = "Danger! Mohon isi start_date dan end_date terlebih dahulu!!!";
-		assertTrue(viewExportPage.getTxtInvalidExportEmpty().contains(adminName));
+		String txtExpected = "Danger! Mohon isi start_date dan end_date terlebih dahulu!!!";
+		assertTrue(viewExportPage.getTxtInvalidExportEmpty().contains(txtExpected));
 		extentTest.log(LogStatus.PASS, "Siloam075 Validasi Sukses Export Start End Date Empty");
 	}
 
@@ -52,10 +52,14 @@ public class TestExportInvalid {
 	@Given("Siloam075 Admin Berada Di Halaman View Export Dan Memasukkan Start End Date Dan Tekan Filter")
 	public void siloam075_admin_berada_di_halaman_view_export_dan_memasukkan_start_end_date_dan_tekan_filter() {
 		driver.get(Constants.URL_SILOAM);
-		viewExportPage.login("admindika", "d1k4@passw0rd");
+		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM, Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
-	    viewExportPage.filter("2022-10-01", "2022-10-01");
+	    
+	    String startDate = "2022-10-01";
+	    String endDate = "2022-10-01";
+	    
+	    viewExportPage.filter(startDate,endDate);
 	    extentTest.log(LogStatus.PASS, "Siloam075 Admin Berada Di Halaman View Export Dan Memasukkan Start End Date Dan Tekan Filter");
 	}
 
@@ -67,8 +71,8 @@ public class TestExportInvalid {
 
 	@Then("Siloam075 Validasi Sukses Export Data Empty")
 	public void siloam075_validasi_sukses_export_data_empty() {
-		String adminName = "Danger! Data Tidak Ada!!!";
-		assertTrue(viewExportPage.getTxtInvalidExportEmpty().contains(adminName));
-		extentTest.log(LogStatus.PASS, "Siloam075 Validasi Sukses Export Start End Date Empty");
+		String txtExpected = "Danger! Data Tidak Ada!!!";
+		assertTrue(viewExportPage.getTxtInvalidExportEmpty().contains(txtExpected));
+		extentTest.log(LogStatus.PASS, "Siloam075 Validasi Export Start End Date Empty");
 	}
 }

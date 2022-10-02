@@ -35,14 +35,27 @@ private WebDriver driver;
 	@FindBy(xpath = "//input[@id='tgl']")
 	private WebElement startDate;
 	
-	@FindBy(xpath = "//td[@class='day'][normalize-space()='3']")
+	@FindBy(xpath = "//th[normalize-space()='October 2022']")
+	private WebElement pilihBulan;
+	
+	@FindBy(xpath = "//span[@class='month active']")
+	private WebElement pilihSeptember;
+	//th[normalize-space()='October 2022']
+	//span[@class='month active']
+	@FindBy(xpath = "//div[@class='datepicker-days']//th[@class='prev'][normalize-space()='«']")
+	private WebElement pilihBack;
+	
+	@FindBy(xpath = "//td[normalize-space()='14']")
 	private WebElement pilihTanggalStart;
 	
 	@FindBy(xpath = "//input[@id='tgl2']")
 	private WebElement endDate;
 	
-	@FindBy(xpath = "//span[@id='select2-status-container']")
+	@FindBy(xpath = "//select[@id='status']")
 	private WebElement status;
+	
+	@FindBy(xpath = "//span[@id='select2-status-container']")
+	private WebElement btnStatus;
 	
 	@FindBy(xpath = "//td[normalize-space()='27']")
 	private WebElement pilihTanggalEnd;
@@ -105,14 +118,6 @@ private WebDriver driver;
 	
 	public void filterPending(String pending)
 	{
-		btnStartDate();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-		btnPilihTanggalStart();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-		btnEndDate();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-		btnPilihTanggalEnd();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		btnStatus();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		
@@ -125,14 +130,6 @@ private WebDriver driver;
 	
 	public void filterComplete(String complete)
 	{
-//		btnStartDate();
-//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-//		btnPilihTanggalStart();
-//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-//		btnEndDate();
-//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-//		btnPilihTanggalEnd();
-//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		btnStatus();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		
@@ -143,16 +140,18 @@ private WebDriver driver;
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void filterPilih(String pilih)
+	public void inputStartEndDate()
 	{
 		btnStartDate();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		btnBackBulan();
 		btnPilihTanggalStart();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		btnEndDate();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		btnPilihTanggalEnd();
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		btnFilter();
+	}
+	
+	public void filterPilih(String pilih)
+	{
 		btnStatus();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		
@@ -175,11 +174,11 @@ private WebDriver driver;
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void inputStartDate(String start)
-	{
-		this.startDate.sendKeys(start);
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-	}
+//	public void inputStartDate(String start)
+//	{
+//		this.startDate.sendKeys(start);
+//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//	}
 	
 	public void btnEndDate()
 	{
@@ -187,11 +186,11 @@ private WebDriver driver;
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void inputEndDate(String end)
-	{
-		this.endDate.sendKeys(end);
-		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-	}
+//	public void inputEndDate(String end)
+//	{
+//		this.endDate.sendKeys(end);
+//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//	}
 	
 	public void btnPilihTanggalStart()
 	{
@@ -207,7 +206,7 @@ private WebDriver driver;
 	
 	public void btnStatus()
 	{
-		this.status.click();
+		this.btnStatus.click();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
@@ -220,11 +219,20 @@ private WebDriver driver;
 	public void btnReset()
 	{
 		this.reset.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnBackBulan()
+	{
+		this.pilihBack.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
 	public String getTxtSuccessFilter() {
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidasiFilter);
 	}
+	
+	
 	
 	public String getTxtStartDate() {
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, startDate);

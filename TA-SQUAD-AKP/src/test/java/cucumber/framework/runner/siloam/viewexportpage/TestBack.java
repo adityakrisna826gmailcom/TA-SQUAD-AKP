@@ -35,7 +35,7 @@ public class TestBack {
 	@Given("Siloam045 Admin Sudah Login Dan Berada Di Halaman View Data")
 	public void siloam045_admin_sudah_login_dan_berada_di_halaman_view_data() {
 		driver.get(Constants.URL_SILOAM);
-		viewExportPage.login("admindika", "d1k4@passw0rd");
+		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM, Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    driver.get(Constants.URL_SILOAM_VIEW_ADMIN);
 	    extentTest.log(LogStatus.PASS, "Siloam045 Admin Sudah Login Dan Berada Di Halaman View Data");
@@ -49,8 +49,8 @@ public class TestBack {
 
 	@Then("Siloam045 Validasi Kembali ke Halaman Sebelumnya")
 	public void siloam045_validasi_kembali_ke_halaman_sebelumnya() {
-		String adminName = "View & Export";
-		assertEquals(viewExportPage.getTxtSuccessRefresh(), adminName);
+		String txtExpected = "View & Export";
+		assertEquals(viewExportPage.getTxtSuccessRefresh(), txtExpected);
 		extentTest.log(LogStatus.PASS, "Siloam045 Validasi Kembali ke Halaman Sebelumnya");
 	}
 }

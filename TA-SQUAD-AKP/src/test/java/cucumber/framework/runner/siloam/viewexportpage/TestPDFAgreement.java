@@ -9,6 +9,7 @@ updated_date : -
 
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTException;
@@ -39,10 +40,14 @@ public class TestPDFAgreement {
 	@Given("Siloam065 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
 	public void siloam065_admin_berada_di_halaman_view_export_dan_sudah_tekan_filter() {
 		driver.get(Constants.URL_SILOAM);
-		viewExportPage.login("admindika", "d1k4@passw0rd");
+		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM, Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
-	    viewExportPage.filter("2022-09-14", "2022-09-18");
+	    
+	    String startDate = "2022-09-14";
+	    String endDate = "2022-09-18";
+	    
+	    viewExportPage.filter(startDate,endDate);
 	    extentTest.log(LogStatus.PASS, "Siloam065 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
 	}
 
@@ -50,7 +55,11 @@ public class TestPDFAgreement {
 	public void siloam060_admin_tekan_link_pdf_agreement() throws AWTException {
 		viewExportPage.btnPDFAgreement();
 		Utils.tabEnter();
-		viewExportPage.filter("2022-09-14", "2022-09-18");
+		
+		String startDate = "2022-09-8";
+	    String endDate = "2022-09-10";
+	    
+	    viewExportPage.filter(startDate,endDate);
 		viewExportPage.btnPDFAgreement();
 		Utils.tabEnter();
 		extentTest.log(LogStatus.PASS, "Siloam065 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
@@ -58,8 +67,8 @@ public class TestPDFAgreement {
 
 	@Then("Siloam065 Validasi PDF Agreement")
 	public void siloam060_validasi_pdf_agreement() {
-		String pathSatu = "C:\\Users\\NEXSOFT\\Downloads\\350_agreement_1663523732.pdf";
-		String pathDua = "C:\\Users\\NEXSOFT\\Downloads\\350_agreement_1663523732 (1).pdf";
+		String pathSatu = "C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\350_agreement_1663523732.pdf";
+		String pathDua = "C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\344_agreement_1662635941.pdf";
 		assertTrue(Utils.getFileSize(pathSatu) == Utils.getFileSize(pathDua));
 		extentTest.log(LogStatus.PASS, "Siloam065 Validasi PDF Agreement");
 	}

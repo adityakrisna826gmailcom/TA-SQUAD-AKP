@@ -35,10 +35,14 @@ public class TestRefresh {
 	@Given("Siloam025 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
 	public void siloam025_admin_berada_di_halaman_view_export_dan_sudah_tekan_filter() {
 		driver.get(Constants.URL_SILOAM);
-		viewExportPage.login("admindika", "d1k4@passw0rd");
+		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM, Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
-	    viewExportPage.filter("2022-09-14", "2022-09-18");
+	    
+	    String startDate = "2022-09-14";
+	    String endDate = "2022-09-18";
+	    
+	    viewExportPage.filter(startDate,endDate);
 	    extentTest.log(LogStatus.PASS, "Siloam025 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
 	}
 
@@ -50,8 +54,8 @@ public class TestRefresh {
 
 	@Then("Siloam025 Validasi view & export pada halaman view & export")
 	public void siloam025_validasi_view_export_pada_halaman_view_export() {
-		String adminName = "View & Export";
-		assertEquals(viewExportPage.getTxtSuccessRefresh(), adminName);
+		String txtExpected = "View & Export";
+		assertEquals(viewExportPage.getTxtSuccessRefresh(), txtExpected);
 		extentTest.log(LogStatus.PASS, "Siloam025 Validasi view & export pada halaman view & export");
 	}
 	
