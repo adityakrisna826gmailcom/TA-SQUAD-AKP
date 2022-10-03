@@ -269,6 +269,28 @@ private WebDriver driver;
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
+	public void pilihLimaPuluh(String limaPuluh)
+	{
+		btnShow();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		
+		Select sPilih = new Select(show);
+		sPilih.selectByValue(limaPuluh);
+		
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void pilihSeratus(String seratus)
+	{
+		btnShow();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		
+		Select sPilih = new Select(show);
+		sPilih.selectByValue(seratus);
+		
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
 //	public void scrollBottom()
 //	{
 //		Utils.scrollDownToButtom(driver);
@@ -287,12 +309,32 @@ private WebDriver driver;
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowDuaLima);
 	}
 	
+	public String getTxtLimaPuluh() {
+		Utils.scrollDownToButtom(driver);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowLimaPuluh);
+	}
+	
+	public String getTxtSeratus() {
+		Utils.scrollDownToButtom(driver);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowSeratus);
+	}
+	
 	public String getTxtSepuluhPrevious() {
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowSepuluh);
 	}
 	
 	public String getTxtDuaLimaPrevious() {
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowDuaLima);
+	}
+	
+	public String getTxtLimaPuluhPrevious() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowLimaPuluh);
+	}
+	
+	public String getTxtSeratusPrevious() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidShowSeratus);
 	}
 	
 	public String getTxtSebelas() {
@@ -304,6 +346,18 @@ private WebDriver driver;
 		Utils.scrollByVisibleElement(txtValidNextDualima, driver);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidNextDualima);
+	}
+	
+	public String getTxtLimaPuluhSatu() {
+		Utils.scrollByVisibleElement(txtValidNextLimaPuluh, driver);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidNextLimaPuluh);
+	}
+	
+	public String getTxtSeratusSatu() {
+		Utils.scrollByVisibleElement(txtValidNextSeratus, driver);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidNextSeratus);
 	}
 	
 	
