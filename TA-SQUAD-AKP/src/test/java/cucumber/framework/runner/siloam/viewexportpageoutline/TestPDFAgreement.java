@@ -1,4 +1,4 @@
-package cucumber.framework.runner.siloam.viewexportpage;
+package cucumber.framework.runner.siloam.viewexportpageoutline;
 
 /*
 created_by : Adit
@@ -33,8 +33,8 @@ public class TestPDFAgreement {
 	private ViewExportPage viewExportPage = new ViewExportPage();
 	
 	public TestPDFAgreement() {
-		driver = ViewExportHooks.driver;
-		extentTest = ViewExportHooks.extentTest;
+		driver = ViewExportHooksOutline.driver;
+		extentTest = ViewExportHooksOutline.extentTest;
 	}
 	
 	@Given("Siloam065 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
@@ -54,6 +54,8 @@ public class TestPDFAgreement {
 	@When("Siloam065 Admin Tekan Link PDF Agreement")
 	public void siloam060_admin_tekan_link_pdf_agreement() throws AWTException {
 		viewExportPage.btnPDFAgreement();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		Utils.tabEnter();
 		
 		String startDate = "2022-09-8";
@@ -61,6 +63,8 @@ public class TestPDFAgreement {
 	    
 	    viewExportPage.filter(startDate,endDate);
 		viewExportPage.btnPDFAgreement();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		Utils.tabEnter();
 		extentTest.log(LogStatus.PASS, "Siloam065 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
 	}

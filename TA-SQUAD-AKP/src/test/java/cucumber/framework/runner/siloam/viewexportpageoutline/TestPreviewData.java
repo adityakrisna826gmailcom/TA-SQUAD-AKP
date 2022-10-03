@@ -1,4 +1,4 @@
-package cucumber.framework.runner.siloam.viewexportpage;
+package cucumber.framework.runner.siloam.viewexportpageoutline;
 
 import static org.testng.Assert.assertFalse;
 
@@ -36,8 +36,8 @@ public class TestPreviewData {
 	private ViewExportPage viewExportPage = new ViewExportPage();
 	
 	public TestPreviewData() {
-		driver = ViewExportHooks.driver;
-		extentTest = ViewExportHooks.extentTest;
+		driver = ViewExportHooksOutline.driver;
+		extentTest = ViewExportHooksOutline.extentTest;
 	}
 	
 	@Given("Siloam050 Admin Sudah Login Dan Berada Di Halaman View Data")
@@ -53,10 +53,18 @@ public class TestPreviewData {
 	public void siloam050_admin_tekan_tombol_preview_data() throws AWTException {
 		viewExportPage.btnPreviewData();
 		Utils.tabEnter();
+		
 		driver.get(Constants.URL_SILOAM_VIEW_ADMIN_DUA);
+		
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		viewExportPage.btnPreviewData();
+		
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		Utils.tabEnter();
+		
 		extentTest.log(LogStatus.PASS, "Siloam050 Admin Sudah Login Dan Berada Di Halaman View Data");
 	}	
 	

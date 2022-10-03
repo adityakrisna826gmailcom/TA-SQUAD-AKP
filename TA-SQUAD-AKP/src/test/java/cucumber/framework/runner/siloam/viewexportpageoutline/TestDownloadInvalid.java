@@ -1,4 +1,4 @@
-package cucumber.framework.runner.siloam.viewexportpage;
+package cucumber.framework.runner.siloam.viewexportpageoutline;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -21,8 +21,8 @@ public class TestDownloadInvalid {
 	private ViewExportPage viewExportPage = new ViewExportPage();
 	
 	public TestDownloadInvalid() {
-		driver = ViewExportHooks.driver;
-		extentTest = ViewExportHooks.extentTest;
+		driver = ViewExportHooksOutline.driver;
+		extentTest = ViewExportHooksOutline.extentTest;
 	}
 	
 	@Given("Siloam080 Admin Berada Di Halaman View Export")

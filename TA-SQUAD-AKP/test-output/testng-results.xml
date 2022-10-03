@@ -1,79 +1,286 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="15" passed="14" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-03T11:55:27 WIB" name="Default suite" finished-at="2022-10-03T11:56:26 WIB" duration-ms="59182">
+  <suite started-at="2022-10-03T13:54:03 WIB" name="Default suite" finished-at="2022-10-03T13:58:47 WIB" duration-ms="283972">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-10-03T11:55:27 WIB" name="Default test" finished-at="2022-10-03T11:56:26 WIB" duration-ms="59182">
-      <class name="cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T11:55:27 WIB" name="setUpClass" finished-at="2022-10-03T11:55:27 WIB" duration-ms="755" status="PASS">
+    <test started-at="2022-10-03T13:54:03 WIB" name="Default test" finished-at="2022-10-03T13:58:47 WIB" duration-ms="283972">
+      <class name="cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:54:03 WIB" name="setUpClass" finished-at="2022-10-03T13:54:04 WIB" duration-ms="915" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6e00837f]]>
+                <![CDATA[org.testng.TestRunner@1df06ecd]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T11:55:27 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T11:55:56 WIB" duration-ms="28372" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:54:04 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:54:27 WIB" duration-ms="22861" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Siloam090 Form Return Sales Show Page Seratus"]]>
+                <![CDATA["Siloam020 Admin Memasukkan Start Date End Date Tekan Filter"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Form Return Sales Show Page"]]>
+                <![CDATA["Admin Melihat Data Karyawan"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T11:55:56 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T11:56:11 WIB" duration-ms="15191" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:54:27 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:54:42 WIB" duration-ms="15512" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Siloam090 Form Return Sales Show Page Seratus Next"]]>
+                <![CDATA["Siloam025 Admin Tekan Refresh"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Form Return Sales Show Page"]]>
+                <![CDATA["Admin Melakukan Refresh"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T11:56:11 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T11:56:24 WIB" duration-ms="13369" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:54:42 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:55:07 WIB" duration-ms="25327" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Siloam090 Form Return Sales Show Page Seratus Previous"]]>
+                <![CDATA["Siloam030 Admin Tekan Download"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Form Return Sales Show Page"]]>
+                <![CDATA["Admin Melakukan Download"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner@68c9133c]" started-at="2022-10-03T11:56:24 WIB" name="tearDownClass" finished-at="2022-10-03T11:56:26 WIB" duration-ms="1432" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:55:08 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:55:31 WIB" duration-ms="23791" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam035 Admin Tekan Export"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Melakukan Export"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:55:31 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:55:47 WIB" duration-ms="15910" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam040 Admin Menekan View"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Menekan View"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:55:47 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:55:54 WIB" duration-ms="7079" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam045 Admin Menekan Back"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Menekan Tombol Back"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:55:54 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:56:29 WIB" duration-ms="34545" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam050 Admin Menekan Preview Data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Menekan Preview Data"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertFalse(Assert.java:78)
+at org.testng.Assert.assertFalse(Assert.java:88)
+at cucumber.framework.runner.siloam.viewexportpageoutline.TestPreviewData.siloam050_validasi_data_pada_dokumen_pdf(TestPreviewData.java:76)
+at ✽.Siloam050 Validasi Data Pada Dokumen PDF(file:///C:/Users/NEXSOFT/Documents/GitHub/TA_SQA/TA-SQUAD-AKP/src/test/resources/Features/Siloam/050AdminMenekanPreviewData.feature:11)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:56:29 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:57:18 WIB" duration-ms="49028" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam065 Admin Tekan PDF Agreement"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Menekan Link PDF Agreement"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:57:18 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:57:27 WIB" duration-ms="8852" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam075 Admin Tekan Export Start End Date Empty"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Menekan Export Invalid"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:57:27 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:57:43 WIB" duration-ms="16476" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam075 Admin Tekan Export Data Empty"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Menekan Export Invalid"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:57:43 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:57:52 WIB" duration-ms="8849" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam080 Admin Tekan Download Start End Date Empty"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Menekan Download Invalid"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:57:52 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:58:08 WIB" duration-ms="15932" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam080 Admin Tekan Download Data Empty"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Menekan Download Invalid"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:58:08 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:58:20 WIB" duration-ms="12303" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam070 Admin Melihat Data Karyawan Invalid Empty"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Melihat Data Karyawan Invalid"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:58:20 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:58:32 WIB" duration-ms="12203" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam070 Admin Melihat Data Karyawan Invalid Empty"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Melihat Data Karyawan Invalid"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:58:33 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-03T13:58:45 WIB" duration-ms="12638" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Siloam070 Admin Melihat Data Karyawan Invalid Empty"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Admin Melihat Data Karyawan Invalid"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline@68c9133c]" started-at="2022-10-03T13:58:45 WIB" name="tearDownClass" finished-at="2022-10-03T13:58:47 WIB" duration-ms="1646" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- cucumber.framework.runner.siloam.formreturnpage.FormReturnRunner -->
+      </class> <!-- cucumber.framework.runner.siloam.viewexportpageoutline.ViewExportRunnerOutline -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

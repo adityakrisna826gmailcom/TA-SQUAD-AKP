@@ -1,4 +1,4 @@
-package cucumber.framework.runner.siloam.viewexportpage;
+package cucumber.framework.runner.siloam.viewexportpageoutline;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -21,8 +21,8 @@ public class TestExportInvalid {
 	private ViewExportPage viewExportPage = new ViewExportPage();
 	
 	public TestExportInvalid() {
-		driver = ViewExportHooks.driver;
-		extentTest = ViewExportHooks.extentTest;
+		driver = ViewExportHooksOutline.driver;
+		extentTest = ViewExportHooksOutline.extentTest;
 	}
 	
 	
