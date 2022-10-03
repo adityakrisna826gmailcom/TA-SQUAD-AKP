@@ -7,21 +7,21 @@ Feature: Form Return Sales Filter
 
 #Show Page 10
 
-   #Scenario: Siloam090 Form Return Sales Show Page Sepuluh
-#		When Siloam090 Sales Sudah Login Dan Berada Di Halaman Form Return Show Page Sepuluh
-#		And  Siloam090 Sales Tekan Tombol Show Sepuluh
-#		And  Siloam090 Sales Pilih Sepuluh
-    #Then Siloam090 Validasi Angka Sepuluh 
-    #
-   #Scenario: Siloam090 Form Return Sales Show Page Sepuluh Next
-#		When Siloam090 Sales Sudah Login Berada Di Halaman Form Return Dan Pilih Show Page Sepuluh
-#		And  Siloam090 Sales Tekan Tombol Show Sepuluh Next
-    #Then Siloam090 Validasi Angka Sebelas 
-    #
-    #Scenario: Siloam090 Form Return Sales Show Page Sepuluh Previous
-#		When Siloam090 Sales Sudah Login Berada Di Halaman Form Return Pilih Show Page Sepuluh Dan Next 
-#		And  Siloam090 Sales Tekan Tombol Show Sepuluh Previous
-    #Then Siloam090 Validasi Angka Sepuluh Previous
+   Scenario: Siloam090 Form Return Sales Show Page Sepuluh
+		When Siloam090 Sales Sudah Login Dan Berada Di Halaman Form Return Show Page Sepuluh
+		And  Siloam090 Sales Tekan Tombol Show Sepuluh
+		And  Siloam090 Sales Pilih Sepuluh
+    Then Siloam090 Validasi Angka Sepuluh 
+    
+   Scenario: Siloam090 Form Return Sales Show Page Sepuluh Next
+		When Siloam090 Sales Sudah Login Berada Di Halaman Form Return Dan Pilih Show Page Sepuluh
+		And  Siloam090 Sales Tekan Tombol Show Sepuluh Next
+    Then Siloam090 Validasi Angka Sebelas 
+    
+    Scenario: Siloam090 Form Return Sales Show Page Sepuluh Previous
+		When Siloam090 Sales Sudah Login Berada Di Halaman Form Return Pilih Show Page Sepuluh Dan Next 
+		And  Siloam090 Sales Tekan Tombol Show Sepuluh Previous
+    Then Siloam090 Validasi Angka Sepuluh Previous
     
 #Show Page 25    
 

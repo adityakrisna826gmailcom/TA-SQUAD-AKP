@@ -65,7 +65,7 @@ public class TestPreviewData {
 	public void siloam050_validasi_data_pada_dokumen_pdf() {
 		String pathSatu = "C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\mpdf.pdf";
 		String pathDua = "C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\mpdf (1).pdf";
-		assertTrue(Utils.getFileSize(pathSatu) == Utils.getFileSize(pathDua));
+		assertFalse(Utils.getFileSize(pathSatu) == Utils.getFileSize(pathDua));
 		extentTest.log(LogStatus.PASS, "Siloam025 Siloam030 Validasi An uncaught Exception was encountered");
 	}
 }

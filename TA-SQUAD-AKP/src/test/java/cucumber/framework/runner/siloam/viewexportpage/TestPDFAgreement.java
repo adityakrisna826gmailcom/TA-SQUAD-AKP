@@ -69,7 +69,7 @@ public class TestPDFAgreement {
 	public void siloam060_validasi_pdf_agreement() {
 		String pathSatu = "C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\350_agreement_1663523732.pdf";
 		String pathDua = "C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\344_agreement_1662635941.pdf";
-		assertTrue(Utils.getFileSize(pathSatu) == Utils.getFileSize(pathDua));
+		assertFalse(Utils.getFileSize(pathSatu) == Utils.getFileSize(pathDua));
 		extentTest.log(LogStatus.PASS, "Siloam065 Validasi PDF Agreement");
 	}
 	

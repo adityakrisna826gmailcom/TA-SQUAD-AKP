@@ -33,89 +33,89 @@ public class TestFormReturnShowPage {
 		extentTest = FormReturnHooks.extentTest;
 	}
 	
-//	@When("Siloam090 Sales Sudah Login Dan Berada Di Halaman Form Return Show Page Sepuluh")
-//	public void siloam090_sales_sudah_login_dan_berada_di_halaman_form_return_show_page_sepuluh() {
-//		driver.get(Constants.URL_SILOAM);
-//		formReturnPage.login(Constants.USERNAME_SALES_SILOAM, Constants.PASSWORD_SALES_SILOAM);
-//		formReturnPage.btnLogin();
-//		formReturnPage.btnNew();
-//	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Sudah Login Dan Berada Di Halaman Form Return Show Page Sepuluh");
-//	}
-//
-//	@And("Siloam090 Sales Tekan Tombol Show Sepuluh")
-//	public void siloam090_sales_tekan_tombol_show_sepuluh() {
-//	    formReturnPage.btnShow();
-//	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Tekan Tombol Show Sepuluh");
-//	}
-//
-//	@And("Siloam090 Sales Pilih Sepuluh")
-//	public void siloam090_sales_pilih_sepuluh() {
-//	    formReturnPage.pilihSepuluh("10");
-//	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Pilih Sepuluh");
-//	}
-//
-//	@Then("Siloam090 Validasi Angka Sepuluh")
-//	public void siloam090_validasi_angka_sepuluh() {
-//		String txtExpected = "10";
-//		assertEquals(formReturnPage.getTxtSepuluh(), txtExpected);
-//		extentTest.log(LogStatus.PASS, "Siloam090 Validasi Angka Sepuluh");
-//	}
-//	
-//
-////Next Show Sepuluh
-//	
-//	@When("Siloam090 Sales Sudah Login Berada Di Halaman Form Return Dan Pilih Show Page Sepuluh")
-//	public void siloam090_sales_sudah_login_berada_di_halaman_form_return_dan_pilih_show_page_sepuluh() {
-//		driver.get(Constants.URL_SILOAM);
-//		formReturnPage.login(Constants.USERNAME_SALES_SILOAM, Constants.PASSWORD_SALES_SILOAM);
-//		formReturnPage.btnLogin();
-//		formReturnPage.btnNew();
-//		formReturnPage.btnShow();
-//		formReturnPage.pilihSepuluh("10");
-//	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Sudah Login Berada Di Halaman Form Return Dan Pilih Show Page Sepuluh");
-//	}
-//
-//	@And("Siloam090 Sales Tekan Tombol Show Sepuluh Next")
-//	public void siloam090_sales_tekan_tombol_show_sepuluh_next() {
-//	    Utils.scrollDownToButtom(driver);
-//	    formReturnPage.btnNext();
-//	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Tekan Tombol Show Sepuluh Next");
-//	}
-//
-//	@Then("Siloam090 Validasi Angka Sebelas")
-//	public void siloam090_validasi_angka_sebelas() {
-//		String txtExpected = "11";
-//		assertEquals(formReturnPage.getTxtSebelas(), txtExpected);
-//		extentTest.log(LogStatus.PASS, "Siloam090 Validasi Angka Sepuluh");
-//	}
-//	
-//// Previous Show Sepuluh
-//	
-//	@When("Siloam090 Sales Sudah Login Berada Di Halaman Form Return Pilih Show Page Sepuluh Dan Next")
-//	public void siloam090_sales_sudah_login_berada_di_halaman_form_return_pilih_show_page_sepuluh_dan_next() {
-//		driver.get(Constants.URL_SILOAM);
-//		formReturnPage.login(Constants.USERNAME_SALES_SILOAM, Constants.PASSWORD_SALES_SILOAM);
-//		formReturnPage.btnLogin();
-//		formReturnPage.btnNew();
-//		formReturnPage.btnShow();
-//		formReturnPage.pilihSepuluh("10");
-//		Utils.scrollDownToButtom(driver);
-//	    formReturnPage.btnNext();
-//	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Sudah Login Berada Di Halaman Form Return Pilih Show Page Sepuluh Dan Next");
-//	}
-//
-//	@And("Siloam090 Sales Tekan Tombol Show Sepuluh Previous")
-//	public void siloam090_sales_tekan_tombol_show_sepuluh_previous() {
-//	    formReturnPage.btnPrevious();
-//	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Tekan Tombol Show Sepuluh Previous");
-//	}
-//
-//	@Then("Siloam090 Validasi Angka Sepuluh Previous")
-//	public void siloam090_validasi_angka_sepuluh_previous() {
-//		String txtExpected = "10";
-//		assertEquals(formReturnPage.getTxtSepuluhPrevious(), txtExpected);
-//		extentTest.log(LogStatus.PASS, "Siloam090 Validasi Angka Sepuluh Previous");
-//	}
+	@When("Siloam090 Sales Sudah Login Dan Berada Di Halaman Form Return Show Page Sepuluh")
+	public void siloam090_sales_sudah_login_dan_berada_di_halaman_form_return_show_page_sepuluh() {
+		driver.get(Constants.URL_SILOAM);
+		formReturnPage.login(Constants.USERNAME_SALES_SILOAM, Constants.PASSWORD_SALES_SILOAM);
+		formReturnPage.btnLogin();
+		formReturnPage.btnNew();
+	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Sudah Login Dan Berada Di Halaman Form Return Show Page Sepuluh");
+	}
+
+	@And("Siloam090 Sales Tekan Tombol Show Sepuluh")
+	public void siloam090_sales_tekan_tombol_show_sepuluh() {
+	    formReturnPage.btnShow();
+	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Tekan Tombol Show Sepuluh");
+	}
+
+	@And("Siloam090 Sales Pilih Sepuluh")
+	public void siloam090_sales_pilih_sepuluh() {
+	    formReturnPage.pilihSepuluh("10");
+	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Pilih Sepuluh");
+	}
+
+	@Then("Siloam090 Validasi Angka Sepuluh")
+	public void siloam090_validasi_angka_sepuluh() {
+		String txtExpected = "10";
+		assertEquals(formReturnPage.getTxtSepuluh(), txtExpected);
+		extentTest.log(LogStatus.PASS, "Siloam090 Validasi Angka Sepuluh");
+	}
+	
+
+//Next Show Sepuluh
+	
+	@When("Siloam090 Sales Sudah Login Berada Di Halaman Form Return Dan Pilih Show Page Sepuluh")
+	public void siloam090_sales_sudah_login_berada_di_halaman_form_return_dan_pilih_show_page_sepuluh() {
+		driver.get(Constants.URL_SILOAM);
+		formReturnPage.login(Constants.USERNAME_SALES_SILOAM, Constants.PASSWORD_SALES_SILOAM);
+		formReturnPage.btnLogin();
+		formReturnPage.btnNew();
+		formReturnPage.btnShow();
+		formReturnPage.pilihSepuluh("10");
+	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Sudah Login Berada Di Halaman Form Return Dan Pilih Show Page Sepuluh");
+	}
+
+	@And("Siloam090 Sales Tekan Tombol Show Sepuluh Next")
+	public void siloam090_sales_tekan_tombol_show_sepuluh_next() {
+	    Utils.scrollDownToButtom(driver);
+	    formReturnPage.btnNext();
+	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Tekan Tombol Show Sepuluh Next");
+	}
+
+	@Then("Siloam090 Validasi Angka Sebelas")
+	public void siloam090_validasi_angka_sebelas() {
+		String txtExpected = "11";
+		assertEquals(formReturnPage.getTxtSebelas(), txtExpected);
+		extentTest.log(LogStatus.PASS, "Siloam090 Validasi Angka Sepuluh");
+	}
+	
+// Previous Show Sepuluh
+	
+	@When("Siloam090 Sales Sudah Login Berada Di Halaman Form Return Pilih Show Page Sepuluh Dan Next")
+	public void siloam090_sales_sudah_login_berada_di_halaman_form_return_pilih_show_page_sepuluh_dan_next() {
+		driver.get(Constants.URL_SILOAM);
+		formReturnPage.login(Constants.USERNAME_SALES_SILOAM, Constants.PASSWORD_SALES_SILOAM);
+		formReturnPage.btnLogin();
+		formReturnPage.btnNew();
+		formReturnPage.btnShow();
+		formReturnPage.pilihSepuluh("10");
+		Utils.scrollDownToButtom(driver);
+	    formReturnPage.btnNext();
+	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Sudah Login Berada Di Halaman Form Return Pilih Show Page Sepuluh Dan Next");
+	}
+
+	@And("Siloam090 Sales Tekan Tombol Show Sepuluh Previous")
+	public void siloam090_sales_tekan_tombol_show_sepuluh_previous() {
+	    formReturnPage.btnPrevious();
+	    extentTest.log(LogStatus.PASS, "Siloam090 Sales Tekan Tombol Show Sepuluh Previous");
+	}
+
+	@Then("Siloam090 Validasi Angka Sepuluh Previous")
+	public void siloam090_validasi_angka_sepuluh_previous() {
+		String txtExpected = "10";
+		assertEquals(formReturnPage.getTxtSepuluhPrevious(), txtExpected);
+		extentTest.log(LogStatus.PASS, "Siloam090 Validasi Angka Sepuluh Previous");
+	}
 	
 //Show Page Dua Puluh Lima
 	
