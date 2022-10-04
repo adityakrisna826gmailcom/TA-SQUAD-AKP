@@ -87,6 +87,7 @@ public class TestFormReturnFilter {
 		formReturnPage.btnNew();
 		formReturnPage.inputStartEndDate();
 		formReturnPage.filterComplete("complete");
+		formReturnPage.btnFilter();
 	    extentTest.log(LogStatus.PASS, "Siloam085 Sales Sudah Login Dan Sudah Input Start Date End Date Status Dan Tekan Tilter");
 	}
 
@@ -132,7 +133,7 @@ public class TestFormReturnFilter {
 
 	@And("Siloam085 Sales Input Status Pending")
 	public void siloam085_sales_input_status_pending() {
-		formReturnPage.filterComplete("pending");
+		formReturnPage.filterPending("pending");
 	    extentTest.log(LogStatus.PASS, "Siloam085 Sales Input Status Complete");
 	}
 
@@ -157,6 +158,7 @@ public class TestFormReturnFilter {
 		formReturnPage.btnNew();
 		formReturnPage.inputStartEndDate();
 		formReturnPage.filterComplete("pending");
+		formReturnPage.btnFilter();
 	    extentTest.log(LogStatus.PASS, "Siloam085 Sales Sudah Login Dan Sudah Input Start Date End Date Status Dan Tekan Filter Pending");
 	}
 

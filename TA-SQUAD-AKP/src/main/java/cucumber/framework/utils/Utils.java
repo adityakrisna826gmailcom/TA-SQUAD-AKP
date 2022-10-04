@@ -221,4 +221,13 @@ public class Utils {
 			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		}
 	}
+	
+	public static void deleteFile(String path) throws IOException{
+		File file = new File(path);
+	    if (file.delete()) { 
+	      System.out.println("Deleted the file: " + file.getName());
+	    } else {
+	      System.out.println("Failed To Delete The File !!");
+	    } 
+	}
 }

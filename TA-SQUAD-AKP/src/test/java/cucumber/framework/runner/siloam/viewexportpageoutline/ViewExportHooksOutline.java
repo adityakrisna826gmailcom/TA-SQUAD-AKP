@@ -10,7 +10,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.connection.DriverSingleton;
 import cucumber.framework.constant.Constants;
-import cucumber.framework.scenariotest.siloam.SiloamViewExportInvalid;
+import cucumber.framework.scenariotest.siloam.SiloamViewExport;
 import cucumber.framework.utils.Utils;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
@@ -23,8 +23,8 @@ public class ViewExportHooksOutline {
 	public static WebDriver driver;
 	public static ExtentTest extentTest;
 	public static ExtentReports reports = new ExtentReports("target/siloam/extentreport/siloam-view-export-outline.html");
-	private static SiloamViewExportInvalid[] tests = SiloamViewExportInvalid.values();
-	private static final int[] DATA_OUTLINE = {1,1,1,1,1,1,1,1,1,1,1,1,3};
+	private static SiloamViewExport[] tests = SiloamViewExport.values();
+	private static final int[] DATA_OUTLINE = {1,1,1,1,1,1,1,1,1,1,1,1,3,1}; //1,1,1,1,1,1,1,1,1,1,1,1,
 	private String testReport = "";
 	
 	@Before

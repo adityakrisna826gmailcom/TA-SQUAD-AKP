@@ -46,6 +46,18 @@ private WebDriver driver;
 	@FindBy(xpath = "//td[normalize-space()='14']")
 	private WebElement pilihTanggalStart;
 	
+	@FindBy(xpath = "//td[@class='day'][normalize-space()='9']")
+	private WebElement pilihTanggalStartInvalidPending;
+	
+	@FindBy(xpath = "//td[normalize-space()='11']")
+	private WebElement pilihTanggalEndInvalidPending;
+	
+	@FindBy(xpath = "//td[normalize-space()='17']")
+	private WebElement pilihTanggalStartInvalidComplete;
+	
+	@FindBy(xpath = "//td[normalize-space()='23']")
+	private WebElement pilihTanggalEndInvalidComplete;
+	
 	@FindBy(xpath = "//input[@id='tgl2']")
 	private WebElement endDate;
 	
@@ -107,10 +119,50 @@ private WebDriver driver;
 	@FindBy(xpath = "//span[@id='btnSearch']")
 	private WebElement btnSearch;
 	
+	@FindBy(xpath = "//span[@id='btnRefresh']")
+	private WebElement btnResetSearch;
+	
 	@FindBy(xpath = "//i[@class='fa fa-history']")
 	private WebElement refresh;
 	
+	@FindBy(xpath = "//table[@id='table']/tbody/tr/td[7]/center/a/span")
+	private WebElement aksi;
 	
+	
+	@FindBy(xpath = "//td[normalize-space()='GILBERT']")
+	private WebElement txtValidCariNama;
+	
+	@FindBy(xpath = "//td[normalize-space()='2312324139999']")
+	private WebElement txtValidCariNoBPJS;
+	
+	@FindBy(xpath = "//td[normalize-space()='KABUPATEN ACEH SINGKIL']")
+	private WebElement txtValidCariKotaKTP;
+	
+	@FindBy(xpath = "//td[normalize-space()='Bekasi']")
+	private WebElement txtValidCariFaskesAwal;
+	
+	@FindBy(xpath = "//td[normalize-space()='Clinic Bona Indah']")
+	private WebElement txtValidCariFaskesTujuan;
+	
+	@FindBy(xpath = "//td[@class='dataTables_empty']")
+	private WebElement txtInvalidSearch;
+
+	@FindBy(xpath = "//a[@class='nav-link active']//span[@class='d-sm-block d-none']")
+	private WebElement txtValidTTDDigital;
+	
+	@FindBy(xpath = "//a[@class='nav-link active']//span[@class='d-sm-block d-none']")
+	private WebElement txtValidUploadDoc;
+	
+	
+//	@FindBy(xpath = "//span[@class='d-none d-md-inline']")
+//	private WebElement akunSales;
+//	
+//	@FindBy(xpath = "//a[@class='dropdown-item']")
+//	private WebElement logOut;
+	
+	
+	
+//	ZUHDI
 	
 	public void filterPending(String pending)
 	{
@@ -120,7 +172,7 @@ private WebDriver driver;
 		Select sPending = new Select(status);
 		sPending.selectByValue(pending);
 		
-		btnFilter();
+//		btnFilter();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
@@ -132,7 +184,7 @@ private WebDriver driver;
 		Select sComplete = new Select(status);
 		sComplete.selectByValue(complete);
 		
-		btnFilter();
+//		btnFilter();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
@@ -154,7 +206,7 @@ private WebDriver driver;
 		Select sPilih = new Select(status);
 		sPilih.selectByValue(pilih);
 		
-		btnFilter();
+//		btnFilter();
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
@@ -247,6 +299,7 @@ private WebDriver driver;
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
+	
 	public void pilihSepuluh(String sepuluh)
 	{
 		btnShow();
@@ -291,11 +344,7 @@ private WebDriver driver;
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-//	public void scrollBottom()
-//	{
-//		Utils.scrollDownToButtom(driver);
-//		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
-//	}
+
 	
 	public String getTxtSepuluh() {
 		Utils.scrollDownToButtom(driver);
@@ -360,6 +409,126 @@ private WebDriver driver;
 		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidNextSeratus);
 	}
 	
+
 	
+// FITUR SEARCH
+	
+	public void btnSearch()
+	{
+		this.btnSearch.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void klikSearch()
+	{
+		this.search.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnResetSearch()
+	{
+		this.btnResetSearch.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void inputSearch (String cari)
+	{
+		this.search.sendKeys(cari);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public String getTxtValidCariNama() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidCariNama);
+	}
+	
+	public String getTxtValidCariNoBPJS() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidCariNoBPJS);
+	}
+	
+	public String getTxtValidCariKotaKTP() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidCariKotaKTP);
+	}
+	
+	public String getTxtValidCariKota() {
+		return txtValidCariKotaKTP.getAttribute("innerHTML").toString();
+	}
+	
+	public String getTxtValidCariFaskesAwal() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidCariFaskesAwal);
+	}
+	
+	public String getTxtValidCariFaskesTujuan() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidCariFaskesTujuan);
+	}
+	
+	public String getTxtInvalidSearch() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtInvalidSearch);
+	}
+	
+	public String getTxtValidReset() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, search);
+	}
+	
+
+//FITUR AKSI
+	
+	public void btnAksi()
+	{
+		this.aksi.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public String getTxtValidTTDDigital() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidTTDDigital);
+	}
+	
+	public String getTxtValidUploadDoc() {
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, txtValidUploadDoc);
+	}
+	
+//INVALID FILTER
+	public void pilihStartEndDateInvalidPending()
+	{
+		this.btnStartDate();
+		this.btnPilihTanggalStartInvalidPending();
+		this.btnEndDate();
+		this.btnPilihTanggalEndInvalidPending();
+//		btnFilter();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void pilihStartEndDateInvalidComplete()
+	{
+		this.btnStartDate();
+		this.btnPilihTanggalStartInvalidComplete();
+		this.btnEndDate();
+		this.btnPilihTanggalEndInvalidComplete();
+//		btnFilter();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnPilihTanggalStartInvalidPending()
+	{
+		this.pilihTanggalStartInvalidPending.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnPilihTanggalEndInvalidPending()
+	{
+		this.pilihTanggalEndInvalidPending.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnPilihTanggalStartInvalidComplete()
+	{
+		this.pilihTanggalStartInvalidComplete.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void btnPilihTanggalEndInvalidComplete()
+	{
+		this.pilihTanggalEndInvalidComplete.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
 
 }

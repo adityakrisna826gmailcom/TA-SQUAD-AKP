@@ -13,8 +13,14 @@ updated_date : -
 
 @CucumberOptions(
 features = {
-//		"src/test/resources/Features/Siloam/085FormReturnSalesFilter.feature",
-		"src/test/resources/Features/Siloam/090FormReturnSalesShowPage.feature"},
+		"src/test/resources/Features/Siloam/085FormReturnSalesFilter.feature",
+		"src/test/resources/Features/Siloam/090FormReturnSalesShowPage.feature",
+		"src/test/resources/Features/Siloam/093FormReturnSalesCariData.feature",
+		"src/test/resources/Features/Siloam/095FormReturnSalesInvalidSearch.feature",
+		"src/test/resources/Features/Siloam/097FormReturnSalesTekanAksi.feature",
+		"src/test/resources/Features/Siloam/099FormReturnSalesTekanFilterInvalid.feature",
+		"src/test/resources/Features/Siloam/205SalesMenekanTombolLogout.feature"
+		},
 glue = "cucumber.framework.runner.siloam.formreturnpage",
 monochrome=true,
 plugin = {"pretty","html:target/siloam/htmlreport/FormReturnFilterPage.html",

@@ -13,6 +13,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTException;
+import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 
@@ -32,9 +33,11 @@ public class TestPDFAgreement {
 	private static ExtentTest extentTest;
 	private ViewExportPage viewExportPage = new ViewExportPage();
 	
-	public TestPDFAgreement() {
+	public TestPDFAgreement() throws IOException {
 		driver = ViewExportHooksOutline.driver;
 		extentTest = ViewExportHooksOutline.extentTest;
+		Utils.deleteFile("C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\350_agreement_1663523732.pdf");
+		Utils.deleteFile("C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\344_agreement_1662635941.pdf");
 	}
 	
 	@Given("Siloam065 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
