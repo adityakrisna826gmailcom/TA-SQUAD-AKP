@@ -14,6 +14,7 @@ public class Constants {
 	public static final String URL_SILOAM = "https://dev.ptdika.com/siloam/panel/login/";
 	public static final String URL_SILOAM_VIEW_ADMIN = "https://dev.ptdika.com/siloam/bd/export_data/do_view/350";
 	public static final String URL_SILOAM_VIEW_ADMIN_DUA = "https://dev.ptdika.com/siloam/bd/export_data/do_view/344";
+	public static final String URL_SILOAM_TTD_DIGITAL = "https://dev.ptdika.com/siloam/sales/input/ttd_digital2/566";
 	
 	
 	public static final String USERNAME_ADMIN_SILOAM = "admindika";

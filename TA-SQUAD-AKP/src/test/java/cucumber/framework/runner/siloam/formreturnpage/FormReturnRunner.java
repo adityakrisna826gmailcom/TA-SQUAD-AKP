@@ -13,8 +13,8 @@ updated_date : -
 
 @CucumberOptions(
 features = {
-		"src/test/resources/Features/Siloam/085FormReturnSalesFilter.feature",
-		"src/test/resources/Features/Siloam/090FormReturnSalesShowPage.feature",
+//		"src/test/resources/Features/Siloam/085FormReturnSalesFilter.feature",
+//		"src/test/resources/Features/Siloam/090FormReturnSalesShowPage.feature",
 		"src/test/resources/Features/Siloam/093FormReturnSalesCariData.feature",
 		"src/test/resources/Features/Siloam/095FormReturnSalesInvalidSearch.feature",
 		"src/test/resources/Features/Siloam/097FormReturnSalesTekanAksi.feature",
