@@ -1,12 +1,5 @@
 package cucumber.framework.runner.siloam.ttddigital;
 
-/*
-created_by : Adit
-created_date : 04/10/2022
-updated_by : -
-updated_date : -
-*/
-
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
@@ -25,25 +18,34 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-public class TTDDigitalHooks {
+public class TTDDigitalHooksOutline {
 
 	public static WebDriver driver;
 	public static ExtentTest extentTest;
-	public static ExtentReports reports = new ExtentReports("target/siloam/extentreport/siloam-ttd-digital.html");
+	public static ExtentReports reports = new ExtentReports("target/siloam/extentreport/siloam-sales-TTD Digital-outline.html");
+	private static SiloamTTDDigital[] tests = SiloamTTDDigital.values();
+	private static final int[] DATA_OUTLINE = {57,6,10,11,6,2};
+	private String testReport = "";
+//	9,29,59,57,,1,1,1,1,1,1,1,6,10,11,6,2
 	
 	@Before
-	public void setUp() {
+	public void setUp() {		
 		DriverSingleton.getInstance(Constants.CHROME);
 		driver = DriverSingleton.getDriver();
-		SiloamTTDDigital[] tests = SiloamTTDDigital.values();
-		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
-		Utils.testCount++;
+		testReport = tests[Utils.testCount].getTestName();
+		extentTest = reports.startTest(testReport);		
+		if(Utils.countOutline==DATA_OUTLINE[Utils.testCount])
+		{
+			Utils.countOutline=0;
+			Utils.testCount++;
+		}
+		Utils.countOutline++;
 	}
 	
 	@AfterStep
 	public void getResultStatus(Scenario scenario) throws IOException {
 		if(scenario.isFailed()) {
-			String screenshotPath = Utils.getScreenshot(driver, "Siloam_SalesFormReturnHooks"+scenario.getName().replace(" ", "_"));
+			String screenshotPath = Utils.getScreenshot(driver, "Siloam_TandaTanganDigitalOutlineHooks"+scenario.getName().replace(" ", "_"));
 			extentTest.log(LogStatus.FAIL, scenario.getName()+"\n"
 					+extentTest.addScreenCapture(screenshotPath));;
 		}
@@ -55,7 +57,7 @@ public class TTDDigitalHooks {
 		reports.flush();
 	}
 	
-	
+//	@AfterTest
 	@AfterAll
 	public static void closeBrowser() {
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);

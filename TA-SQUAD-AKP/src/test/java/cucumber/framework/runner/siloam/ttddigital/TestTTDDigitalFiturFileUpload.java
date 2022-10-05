@@ -18,8 +18,8 @@ public class TestTTDDigitalFiturFileUpload {
 	private static TTDDigitalPage ttdDigital = new TTDDigitalPage();
 	
 	public TestTTDDigitalFiturFileUpload() {
-		driver = TTDDigitalHooks.driver;
-		extentTest = TTDDigitalHooks.extentTest;
+		driver = TTDDigitalHooksOutline.driver;
+		extentTest = TTDDigitalHooksOutline.extentTest;
 	}
 	
 //BEFORE

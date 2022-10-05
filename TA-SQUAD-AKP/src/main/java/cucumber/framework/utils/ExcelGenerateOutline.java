@@ -8,7 +8,7 @@ public class ExcelGenerateOutline {
 
 	public static void main(String[] args) {
 		StringBuilder sBuild = new StringBuilder();
-		String excelPath = "./data/DataDriven.xlsx";
+		String excelPath = "C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\Invalid Edit Syarat Kurang.xlsx";
 		String sheetName = "Sheet1";
 		ExcelReader excelReader = new ExcelReader(excelPath, sheetName);
 
