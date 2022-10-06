@@ -9,15 +9,15 @@ public enum SiloamViewExport {
 //	T5("Siloam040 Admin Menekan View"),
 //	T6("Siloam045 Admin Menekan Back"),
 //	T7("Siloam050 Admin Menekan Preview Data"),
-//	T8("Siloam055 Admin Tekan Faskes Awal"),
-//	T9("Siloam060 Admin Tekan Faskes Tujuan"),
+	T8("Siloam055 Admin Tekan Faskes Awal"),
+	T9("Siloam060 Admin Tekan Faskes Tujuan"),
 //	T10("Siloam065 Admin Tekan PDF Agreement"),
 //	T11("Siloam075 Admin Tekan Export Start End Date Empty"),
 //	T12("Siloam075 Admin Tekan Export Data Empty"),
 //	T13("Siloam080 Admin Tekan Download Start End Date Empty"),
 //	T14("Siloam080 Admin Tekan Download Data Empty"),
-	T15("Siloam070 Admin Melihat Data Karyawan Invalid Empty"),
-	T16("Siloam200 Admin Menekan Tombol LogOut")
+//	T15("Siloam070 Admin Melihat Data Karyawan Invalid Empty"),
+//	T16("Siloam200 Admin Menekan Tombol LogOut")
 	;
 	
 	private String testName;

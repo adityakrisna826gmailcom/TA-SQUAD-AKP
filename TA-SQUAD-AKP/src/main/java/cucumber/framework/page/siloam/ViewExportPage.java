@@ -45,8 +45,6 @@ public class ViewExportPage extends LoginPage{
 	@FindBy(xpath = "//button[normalize-space()='Download']")
 	private WebElement btnDownload;
 	
-//	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[7]/a[1]")
-//	private WebElement btnFaskesAwal;
 	
 	@FindBy(linkText = "Foto Faskes Awal")
 	private WebElement btnFaskesAwal;

@@ -24,7 +24,7 @@ updated_by : -
 updated_date : -
 */
 
-public class TestInvalidEditBPJSDanNoKTP {
+public class TestInvalidEditNoKTPSalahFormat {
 
 	private static WebDriver driver;
 	private static ExtentTest extentTest;
@@ -46,7 +46,7 @@ public class TestInvalidEditBPJSDanNoKTP {
 	private String strUpdateFaskesTujuan;
 	private String strUpdateAlasan;
 	
-	public TestInvalidEditBPJSDanNoKTP() {
+	public TestInvalidEditNoKTPSalahFormat() {
 		driver = TTDDigitalHooksOutline.driver;
 		extentTest = TTDDigitalHooksOutline.extentTest;
 		this.isNamaEmpty = true;
@@ -59,28 +59,28 @@ public class TestInvalidEditBPJSDanNoKTP {
 		this.isAlasanEmpty = true;
 	}
 	
-	@When("Siloam150 Sales Mengakses Halaman Website")
-	public void siloam150_sales_mengakses_halaman_website() {
+	@When("Siloam155 Sales Mengakses Halaman Website")
+	public void siloam155_sales_mengakses_halaman_website() {
 		driver.get(Constants.URL_SILOAM);
 		ttdDigital.login(Constants.USERNAME_SALES_SILOAM, Constants.PASSWORD_SALES_SILOAM);
 		ttdDigital.btnLogin();
-		extentTest.log(LogStatus.PASS, "Siloam150 Sales Mengakses Halaman Website");
+		extentTest.log(LogStatus.PASS, "Siloam155 Sales Mengakses Halaman Website");
 	}
 
-	@Then("Siloam150 Validasi Sales Masuk Ke Halaman TTD Digital")
-	public void siloam150_validasi_sales_masuk_ke_halaman_ttd_digital() {
+	@Then("Siloam155 Validasi Sales Masuk Ke Halaman TTD Digital")
+	public void siloam155_validasi_sales_masuk_ke_halaman_ttd_digital() {
 		driver.get("https://dev.ptdika.com/siloam/sales/input/update/318");
-		extentTest.log(LogStatus.PASS, "Siloam150 Validasi Sales Masuk Ke Halaman TTD Digital");
+		extentTest.log(LogStatus.PASS, "Siloam155 Validasi Sales Masuk Ke Halaman TTD Digital");
 	}
 
-	@When("Siloam150 Sales Tekan Tombol Edit")
-	public void siloam150_sales_tekan_tombol_edit() {
+	@When("Siloam155 Sales Tekan Tombol Edit")
+	public void siloam155_sales_tekan_tombol_edit() {
 		ttdDigital.btnEdit();
-		extentTest.log(LogStatus.PASS, "Siloam150 Sales Tekan Tombol Edit");
+		extentTest.log(LogStatus.PASS, "Siloam155 Sales Tekan Tombol Edit");
 	}
 
-	@And("^Siloam150 Sales Melakukan Update Pada (.*), (.*), (.*), (.*), (.*), (.*), (.*), dan (.*)$")
-	public void siloam150_sales_melakukan_update_pada_nama_nomor_bpjs_nomor_ktp_address_kota_ktp_faskes_awal_faskes_tujuan_dan_alasan(String nama, String nomBpjs,String nomKtp, String address, String kotaKTP, String faskesAwal, String faskesTujuan, String alasan) throws AWTException {
+	@And("^Siloam155 Sales Melakukan Update Pada (.*), (.*), (.*), (.*), (.*), (.*), (.*), dan (.*)$")
+	public void siloam155_sales_melakukan_update_pada_nama_nomor_bpjs_nomor_ktp_address_kota_ktp_faskes_awal_faskes_tujuan_dan_alasan(String nama, String nomBpjs,String nomKtp, String address, String kotaKTP, String faskesAwal, String faskesTujuan, String alasan) throws AWTException {
 		if(!nama.equals("")) {
 			this.isNamaEmpty = false;
 		}
@@ -117,17 +117,17 @@ public class TestInvalidEditBPJSDanNoKTP {
 		
 		
 		ttdDigital.update(nama, nomBpjs, nomKtp, address, kotaKTP, faskesAwal, faskesTujuan, alasan);
-		extentTest.log(LogStatus.PASS, "Siloam150 Sales Melakukan Update Pada nama, nomorBPJS, nomorKTP, address, kotaKTP, faskesAwal, faskesTujuan, dan alasan");
+		extentTest.log(LogStatus.PASS, "Siloam155 Sales Melakukan Update Pada nama, nomorBPJS, nomorKTP, address, kotaKTP, faskesAwal, faskesTujuan, dan alasan");
 	}
 
-	@And("Siloam150 Sales tekan tombol Simpan")
-	public void siloam150_sales_tekan_tombol_simpan() {
+	@And("Siloam155 Sales tekan tombol Simpan")
+	public void siloam155_sales_tekan_tombol_simpan() {
 		ttdDigital.btnUpdate();
-		extentTest.log(LogStatus.PASS, "Siloam145 Sales tekan tombol Simpan");
+		extentTest.log(LogStatus.PASS, "Siloam155 Sales tekan tombol Simpan");
 	}
 
-	@Then("Siloam150 Validasi Required")
-	public void siloam150_validasi_required() {
+	@Then("Siloam155 Validasi Required")
+	public void siloam155_validasi_required() {
 		String txtExpected = "Data berhasil Di Simpan";
 //		String txtExpectedNoBPJS = "The Nomor BPJS already exist.";
 //		String txtExpectedNoKTP = "Field Nomor KTP Harus Diisi!";
@@ -178,6 +178,6 @@ public class TestInvalidEditBPJSDanNoKTP {
 			assertEquals(ttdDigital.getTxtAlasan(), strUpdateAlasan);
 			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		}
-		extentTest.log(LogStatus.PASS, "Siloam150 Validasi Required");
+		extentTest.log(LogStatus.PASS, "Siloam155 Validasi Required");
 	}
 }

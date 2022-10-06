@@ -1,6 +1,11 @@
 package cucumber.framework.runner.siloam.viewexportpageoutline;
 
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+
 /*
 created_by : Adit
 created_date : 30/09/2022
@@ -18,6 +23,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
 import cucumber.framework.page.siloam.ViewExportPage;
+import cucumber.framework.utils.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -28,9 +34,10 @@ public class TestFaskesAwal {
 	private static ExtentTest extentTest;
 	private ViewExportPage viewExportPage = new ViewExportPage();
 	
-	public TestFaskesAwal() {
+	public TestFaskesAwal() throws IOException {
 		driver = ViewExportHooksOutline.driver;
 		extentTest = ViewExportHooksOutline.extentTest;
+		Utils.deleteFile("C:\\Users\\NEXSOFT\\Downloads\\350_Before_c89e27a00e06626438c07e03607a94ed.png");
 	}
 	
 	@Given("Siloam055 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
@@ -44,12 +51,16 @@ public class TestFaskesAwal {
 	}
 
 	@When("Siloam055 Admin Tekan Link Faskes Awal")
-	public void siloam055_admin_tekan_link_faskes_awal() {
-		viewExportPage.btnFaskesAwal();
+	public void siloam055_admin_tekan_link_faskes_awal() throws AWTException {
+		Actions actions = new Actions(driver);
+		WebElement elementLocator = driver.findElement(By.linkText("Foto Faskes Awal"));
+		actions.contextClick(elementLocator).perform();
 		
-//		Actions actions = new Actions(driver);
-//		WebElement elementLocator = driver.findElement(By.cssSelector("img[src='https://dev.ptdika.com/siloam/upload/dokumen/350/350_Before_c89e27a00e06626438c07e03607a94ed.png']"));
-//		actions.contextClick(elementLocator).perform();
+//		Utils.rightClick("Foto Faskes Awal");
+		
+		Utils.tabEnterDown(0, 4, 2);
+		
+//		viewExportPage.btnFaskesAwal();
 		
 		extentTest.log(LogStatus.PASS, "Siloam055 Admin Tekan Link Faskes Awal");
 	}

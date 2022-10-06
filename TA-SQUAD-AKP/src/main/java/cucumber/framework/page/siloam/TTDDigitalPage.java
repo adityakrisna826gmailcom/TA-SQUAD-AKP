@@ -29,22 +29,36 @@ public class TTDDigitalPage extends FormReturnPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_Before_90295f4f6cad49dae9adfad620f2d7df.png')]")
+//	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_Before_90295f4f6cad49dae9adfad620f2d7df.png')]")
+//	private WebElement before;
+	
+	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_Before_38a03311082fda907fadea664f171ae5.jpg')]")
 	private WebElement before;
 	
-	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_After_f79f39df06147b8eeb69bb3afa142953.png')]")
+//	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_After_f79f39df06147b8eeb69bb3afa142953.png')]")
+//	private WebElement after;
+	
+	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_After_ab7af79d2bc370e61ac7ba8fe750dd16.jpg')]")
 	private WebElement after;
 	
-	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_TTD_0e2f59325af64c759eebd459610f8d30.png')]")
+//	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_TTD_0e2f59325af64c759eebd459610f8d30.png')]")
+//	private WebElement ttdDigital;
+	
+	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_TTD_3c7c831a6ad69474014d79b3b64acb03.jpg')]")
 	private WebElement ttdDigital;
+	
 	
 	@FindBy(xpath = "//div[@id='image_preview']/a/img")
 	private WebElement beforeFileUpload;
 	
+	
 	@FindBy(xpath = "//tr[2]/td[3]/div/a/img")
 	private WebElement afterFileUpload;
 	
-	@FindBy(xpath = "//tr[3]/td[3]/div/a/img")
+//	@FindBy(xpath = "//tr[3]/td[3]/div/a/img")
+//	private WebElement ttdDigitalFileUpload;
+	
+	@FindBy(xpath = "//tbody/tr[1]/td[3]/div[1]/a[1]/img[1]")
 	private WebElement ttdDigitalFileUpload;
 	
 	@FindBy(xpath = "//a[@class='btn btn-primary']")

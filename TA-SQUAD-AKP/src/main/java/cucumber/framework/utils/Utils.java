@@ -11,11 +11,13 @@ import java.util.Date;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,6 +25,7 @@ import cucumber.framework.constant.Constants;
 
 public class Utils {
 
+	private static WebDriver driver;
 	public static int testCount = 0;
 	public static int countOutline = 1;
 	
@@ -230,4 +233,37 @@ public class Utils {
 	      System.out.println("Failed To Delete The File !!");
 	    } 
 	}
+	
+	public static void tabEnterDown(int tab, int down, int enter) throws AWTException
+	{
+		Robot robot = new Robot();
+		for(int i =0; i < tab; i++)
+		{
+			robot.keyPress(KeyEvent.VK_TAB);
+			robot.keyRelease(KeyEvent.VK_TAB);
+			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		}
+		
+		for(int i = 0; i < down; i++) {
+			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+			robot.keyPress(KeyEvent.VK_DOWN);
+			robot.keyRelease(KeyEvent.VK_DOWN);
+			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		}
+		
+		for(int i =0; i < enter; i++)
+		{
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		}
+	}
+	
+//	public static void rightClick(String element)
+//	{
+//		Actions actions = new Actions(driver);
+//		WebElement elementLocator = driver.findElement(By.linkText(element));
+//		actions.contextClick(elementLocator).perform();
+//	}
+	
 }

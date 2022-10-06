@@ -24,7 +24,7 @@ public class TTDDigitalHooksOutline {
 	public static ExtentTest extentTest;
 	public static ExtentReports reports = new ExtentReports("target/siloam/extentreport/siloam-sales-TTD Digital-outline.html");
 	private static SiloamTTDDigital[] tests = SiloamTTDDigital.values();
-	private static final int[] DATA_OUTLINE = {57,6,10,11,6,2};
+	private static final int[] DATA_OUTLINE = {1,1,1,1,1,1};//57,6,10,11,6,2,2,2,1,1,1,1,1,1,1
 	private String testReport = "";
 //	9,29,59,57,,1,1,1,1,1,1,1,6,10,11,6,2
 	

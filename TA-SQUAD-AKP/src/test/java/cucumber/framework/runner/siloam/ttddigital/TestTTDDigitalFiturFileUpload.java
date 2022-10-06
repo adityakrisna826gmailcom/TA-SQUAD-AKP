@@ -1,12 +1,18 @@
 package cucumber.framework.runner.siloam.ttddigital;
 
+import java.awt.AWTException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
 import cucumber.framework.page.siloam.TTDDigitalPage;
+import cucumber.framework.utils.Utils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,8 +40,15 @@ public class TestTTDDigitalFiturFileUpload {
 	}
 
 	@And("Siloam215 Sales Menekan Gambar Before Fitur File Upload")
-	public void siloam215_sales_menekan_gambar_before_fitur_file_upload() {
-	    ttdDigital.btnBeforeFileUpload();
+	public void siloam215_sales_menekan_gambar_before_fitur_file_upload() throws AWTException {
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		Actions actions = new Actions(driver);
+		WebElement elementLocator = driver.findElement(By.xpath("//div[@id='image_preview']/a/img"));
+		actions.contextClick(elementLocator).perform();
+		
+		Utils.tabEnterDown(0, 8, 2);
+		
+//	    ttdDigital.btnBeforeFileUpload();
 	    extentTest.log(LogStatus.PASS, "Siloam215 Sales Menekan Gambar Before Fitur File Upload");
 	}
 
@@ -57,8 +70,15 @@ public class TestTTDDigitalFiturFileUpload {
 	}
 
 	@And("Siloam215 Sales Menekan Gambar After Fitur File Upload")
-	public void siloam215_sales_menekan_gambar_after_fitur_file_upload() {
-	    ttdDigital.btnAfterFileUpload();
+	public void siloam215_sales_menekan_gambar_after_fitur_file_upload() throws AWTException {
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		Actions actions = new Actions(driver);
+		WebElement elementLocator = driver.findElement(By.xpath("//tr[2]/td[3]/div/a/img"));
+		actions.contextClick(elementLocator).perform();
+		
+		Utils.tabEnterDown(0, 8, 2);
+		
+//	    ttdDigital.btnAfterFileUpload();
 	    extentTest.log(LogStatus.PASS, "Siloam215 Sales Menekan Gambar After Fitur File Upload");
 	}
 
@@ -81,8 +101,15 @@ public class TestTTDDigitalFiturFileUpload {
 	}
 
 	@And("Siloam215 Sales Menekan Gambar TTD Digital Fitur File Upload")
-	public void siloam215_sales_menekan_gambar_ttd_digital_fitur_file_upload() {
-	    ttdDigital.btnTTDDigitalFileUpload();
+	public void siloam215_sales_menekan_gambar_ttd_digital_fitur_file_upload() throws AWTException {
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		Actions actions = new Actions(driver);
+		WebElement elementLocator = driver.findElement(By.xpath("//tr[3]/td[3]/div/a/img"));
+		actions.contextClick(elementLocator).perform();
+		
+		Utils.tabEnterDown(0, 8, 2);
+		
+//	    ttdDigital.btnTTDDigitalFileUpload();
 	    extentTest.log(LogStatus.PASS, "Siloam215 Sales Menekan Gambar TTD Digital Fitur File Upload");
 	}
 

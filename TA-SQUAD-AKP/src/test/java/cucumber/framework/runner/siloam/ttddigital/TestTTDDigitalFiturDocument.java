@@ -1,12 +1,18 @@
 package cucumber.framework.runner.siloam.ttddigital;
 
+import java.awt.AWTException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
 import cucumber.framework.page.siloam.TTDDigitalPage;
+import cucumber.framework.utils.Utils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,8 +40,14 @@ public class TestTTDDigitalFiturDocument {
 	}
 
 	@And("Siloam210 Sales Menekan Gambar Before Fitur Document")
-	public void siloam210_sales_menekan_gambar_before_fitur_document() {
-	    ttdDigital.btnBefore();
+	public void siloam210_sales_menekan_gambar_before_fitur_document() throws AWTException {
+		Actions actions = new Actions(driver);
+		WebElement elementLocator = driver.findElement(By.xpath("//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_Before_d6afc10be16d20986b0306d476a4b70c.jpg')]"));
+		actions.contextClick(elementLocator).perform();
+		
+		Utils.tabEnterDown(0, 8, 2);
+		
+//	    ttdDigital.btnBefore();
 	    extentTest.log(LogStatus.PASS, "Siloam210 Sales Menekan Gambar Before Fitur Document");
 	}
 
@@ -58,8 +70,14 @@ public class TestTTDDigitalFiturDocument {
 	}
 
 	@And("Siloam210 Sales Menekan Gambar After Fitur Document")
-	public void siloam210_sales_menekan_gambar_after_fitur_document() {
-		ttdDigital.btnAfter();
+	public void siloam210_sales_menekan_gambar_after_fitur_document() throws AWTException {
+		Actions actions = new Actions(driver);
+		WebElement elementLocator = driver.findElement(By.xpath("//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_After_ab7af79d2bc370e61ac7ba8fe750dd16.jpg')]"));
+		actions.contextClick(elementLocator).perform();
+		
+		Utils.tabEnterDown(0, 8, 2);
+		
+//		ttdDigital.btnAfter();
 	    extentTest.log(LogStatus.PASS, "Siloam210 Sales Menekan Gambar After Fitur Document");
 	}
 
@@ -82,8 +100,14 @@ public class TestTTDDigitalFiturDocument {
 	}
 
 	@And("Siloam210 Sales Menekan Gambar TTD Digital Fitur Document")
-	public void siloam210_sales_menekan_gambar_ttd_digital_fitur_document() {
-		ttdDigital.btnTTDDigital();
+	public void siloam210_sales_menekan_gambar_ttd_digital_fitur_document() throws AWTException {
+		Actions actions = new Actions(driver);
+		WebElement elementLocator = driver.findElement(By.xpath("//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_TTD_3c7c831a6ad69474014d79b3b64acb03.jpg')]"));
+		actions.contextClick(elementLocator).perform();
+		
+		Utils.tabEnterDown(0, 8, 2);
+		
+//		ttdDigital.btnTTDDigital();
 	    extentTest.log(LogStatus.PASS, "Siloam210 Sales Menekan Gambar TTD Digital Fitur Document");
 	}
 
