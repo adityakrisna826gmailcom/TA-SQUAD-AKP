@@ -116,7 +116,7 @@ public class TestTTDDigitalFiturFileUpload {
 		double dNum = Double.parseDouble(sub);
 		
 		assertTrue(dNum > 90);
-		extentTest.log(LogStatus.PASS, "Siloam210 Validasi Gambar After Fitur Document");
+		extentTest.log(LogStatus.PASS, "Siloam215 Validasi Gambar After Fitur File Upload");
 	}
 	
 	
@@ -162,6 +162,6 @@ public class TestTTDDigitalFiturFileUpload {
 		double dNum = Double.parseDouble(sub);
 		
 		assertTrue(dNum > 90);
-		extentTest.log(LogStatus.PASS, "Siloam210 Validasi Gambar After Fitur Document");
+		extentTest.log(LogStatus.PASS, "Siloam215 Validasi Gambar TTD Digital Fitur File Upload");
 	}
 }

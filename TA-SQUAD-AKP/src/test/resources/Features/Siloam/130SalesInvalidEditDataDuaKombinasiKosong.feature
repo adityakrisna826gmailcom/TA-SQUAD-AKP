@@ -15,7 +15,7 @@ Feature: Sales Invalid Edit Data Dua Kombinasi Kosong
     Then Siloam130 Validasi Pesan Harus Isi Field
 
     
-#9 Data    
+#10 Data    
     Examples: 
   |nama|nomorBPJS|nomorKTP|address|kotaKTP|faskesAwal|faskesTujuan|alasan|
   |Pamungkas|||Bandung|KOTA BANDUNG|Klinik TA|Kota Bekasi|Test TA|
@@ -27,3 +27,4 @@ Feature: Sales Invalid Edit Data Dua Kombinasi Kosong
 	|Pamungkas|8273648910293||Bandung|KOTA BANDUNG|Klinik TA|Kota Bekasi||
 	|Pamungkas|8273648910293|6571829304817563||KOTA BANDUNG||Kota Bekasi|Test TA|
 	|Pamungkas|8273648910293|6571829304817563||KOTA BANDUNG|Klinik TA|Kota Bekasi||
+	|Pamungkas|8273648910293|6571829304817563|Bandung|KOTA BANDUNG||Kota Bekasi||
