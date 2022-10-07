@@ -23,7 +23,9 @@ public class Constants {
 	public static final String PASSWORD_SALES_SILOAM = "1997-10-23";
 	
 	public static final String USER_COMPUTER_NAME_NOVRI = "ROG";
-	public static final String USER_COMPUTER_NAME = "NEXSOFT";
+	public static final String USER_COMPUTER_NAME = System.getProperty("user.name").toString();
+	
+	public static final String URL_IMG_ONLINE = "https://www.imgonline.com.ua/eng/similarity-percent.php"; //web for compare image
 	
 	
 }

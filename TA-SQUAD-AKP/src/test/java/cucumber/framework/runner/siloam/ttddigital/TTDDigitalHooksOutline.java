@@ -26,7 +26,7 @@ public class TTDDigitalHooksOutline {
 	private static SiloamTTDDigital[] tests = SiloamTTDDigital.values();
 	private static final int[] DATA_OUTLINE = {1,1,1,1,1,1};//57,6,10,11,6,2,2,2,1,1,1,1,1,1,1
 	private String testReport = "";
-//	9,29,59,57,,1,1,1,1,1,1,1,6,10,11,6,2
+//	57,6,10,11,6,2,2,2,1
 	
 	@Before
 	public void setUp() {		

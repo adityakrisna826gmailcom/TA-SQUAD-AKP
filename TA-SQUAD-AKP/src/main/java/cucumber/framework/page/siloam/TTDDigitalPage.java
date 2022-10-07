@@ -29,37 +29,34 @@ public class TTDDigitalPage extends FormReturnPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-//	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_Before_90295f4f6cad49dae9adfad620f2d7df.png')]")
-//	private WebElement before;
 	
-	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_Before_38a03311082fda907fadea664f171ae5.jpg')]")
-	private WebElement before;
+//	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/a[1]")
+//	private WebElement previewUploadDokumenBefore;
 	
-//	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_After_f79f39df06147b8eeb69bb3afa142953.png')]")
-//	private WebElement after;
+	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/a[1]/img[1]")
+	private WebElement previewUploadDokumenBefore;
 	
-	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_After_ab7af79d2bc370e61ac7ba8fe750dd16.jpg')]")
-	private WebElement after;
+//	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[2]/td[3]/div[1]/a[1]")
+//	private WebElement previewUploadDokumenAfter;
 	
-//	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/566/566_TTD_0e2f59325af64c759eebd459610f8d30.png')]")
-//	private WebElement ttdDigital;
+	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[2]/td[3]/div[1]/a[1]/img[1]")
+	private WebElement previewUploadDokumenAfter;
 	
-	@FindBy(xpath = "//img[contains(@src,'https://dev.ptdika.com/siloam/upload/dokumen/570/570_TTD_3c7c831a6ad69474014d79b3b64acb03.jpg')]")
-	private WebElement ttdDigital;
+//	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[3]/td[3]/div[1]/a[1]")
+//	private WebElement previewUploadDokumenTTD;
 	
-	
-	@FindBy(xpath = "//div[@id='image_preview']/a/img")
-	private WebElement beforeFileUpload;
+	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/form[1]/div[1]/table[1]/tbody[1]/tr[3]/td[3]/div[1]/a[1]/img[1]")
+	private WebElement previewUploadDokumenTTD;
 	
 	
-	@FindBy(xpath = "//tr[2]/td[3]/div/a/img")
-	private WebElement afterFileUpload;
+	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/a[1]/img[1]")
+	private WebElement previewDokumenBefore;
 	
-//	@FindBy(xpath = "//tr[3]/td[3]/div/a/img")
-//	private WebElement ttdDigitalFileUpload;
+	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1]/img[1]")
+	private WebElement previewDokumenAfter;
 	
-	@FindBy(xpath = "//tbody/tr[1]/td[3]/div[1]/a[1]/img[1]")
-	private WebElement ttdDigitalFileUpload;
+	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/a[1]/img[1]")
+	private WebElement previewDokumenTTD;
 	
 	@FindBy(xpath = "//a[@class='btn btn-primary']")
 	private WebElement submit;
@@ -138,41 +135,65 @@ public class TTDDigitalPage extends FormReturnPage {
 	@FindBy(xpath = "//button[@class='btn btn-danger pull-left']")
 	private WebElement cancelUpload;	
 	
-	public void btnBefore()
-	{
-		this.before.click();
+// PreviewUploadDocument
+	
+	public WebElement getPreviewUploadDokumenBefore() {		
+		return this.previewUploadDokumenBefore;
+	}
+	
+	public WebElement getPreviewUploadDokumenAfter() {		
+		return this.previewUploadDokumenAfter;
+	}
+	
+	public WebElement getPreviewUploadDokumenTTD() {		
+		return this.previewUploadDokumenTTD;
+	}
+	
+	public void rightClickPreviewUploadDokumenBefore() {
+		Utils.rightClick(getPreviewUploadDokumenBefore(), driver);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void btnAfter()
-	{
-		this.after.click();
+	public void rightClickPreviewUploadDokumenAfter() {
+		Utils.rightClick(getPreviewUploadDokumenAfter(), driver);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void btnTTDDigital()
-	{
-		this.ttdDigital.click();
+	public void rightClickPreviewUploadDokumenTTD() {
+		Utils.rightClick(getPreviewUploadDokumenTTD(), driver);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void btnBeforeFileUpload()
-	{
-		this.beforeFileUpload.click();
+	
+// PreviewDocument
+	
+	public WebElement getPreviewDokumenBefore() {		
+		return this.previewDokumenBefore;
+	}
+	
+	public WebElement getPreviewDokumenAfter() {		
+		return this.previewDokumenAfter;
+	}
+	
+	public WebElement getPreviewDokumenTTD() {		
+		return this.previewDokumenTTD;
+	}
+	
+	public void rightClickPreviewDokumenBefore() {
+		Utils.rightClick(getPreviewDokumenBefore(), driver);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void btnAfterFileUpload()
-	{
-		this.afterFileUpload.click();
+	public void rightClickPreviewDokumenAfter() {
+		Utils.rightClick(getPreviewDokumenAfter(), driver);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
 	
-	public void btnTTDDigitalFileUpload()
-	{
-		this.ttdDigitalFileUpload.click();
+	public void rightClickPreviewDokumenTTD() {
+		Utils.rightClick(getPreviewDokumenTTD(), driver);
 		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 	}
+	
 	
 	public void btnSubmit()
 	{
@@ -455,13 +476,6 @@ public class TTDDigitalPage extends FormReturnPage {
 		
 	}
 	
-//	public WebElement getInputBpjs() {
-//		return this.nomBpjs;
-//	}
-//	
-//	public WebElement getInputNoKTP() {
-//		return this.nomKtp;
-//	}
 	
 	public boolean msgErrorBPJSCharacter() {
 		return (nomBpjs.getAttribute("minlength").toString().contains("13"))  && (nomBpjs.getAttribute("maxlength").contains("13"));
@@ -471,4 +485,61 @@ public class TTDDigitalPage extends FormReturnPage {
 		return (nomKtp.getAttribute("minlength").toString().contains("16"))  && (nomKtp.getAttribute("maxlength").contains("16"));
 	}
 	
+	
+	
+// BEFORE AFTER TTD DIGITAL
+	
+	@FindBy(xpath = "//b[normalize-space()='DIKA | SILOAM']")
+	private WebElement txtPageLogin;
+	
+	@FindBy(xpath = "//input[@name='uploadfile']")
+	private WebElement chooseFileSatu;
+	
+	@FindBy(xpath = "//input[@name='uploadfile2']")
+	private WebElement chooseFileDua;
+	
+	@FindBy(xpath = "//input[@value='OK']")
+	private WebElement okCompress;
+	
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[4]/span[1]")
+	private WebElement txtCompress;
+	
+	@FindBy(xpath = "//h4[@class='panel-title'][normalize-space()='Upload Dokumen']")
+	private WebElement lblUploadDokumenTitle;
+	
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[4]/span[1]")
+	private WebElement lblResult;
+	
+	
+	public void btnOK()
+	{
+		this.okCompress.click();
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void inputChooseFileSatu(String pathSatu)
+	{
+		this.chooseFileSatu.sendKeys(pathSatu);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public void inputChooseFileDua(String pathDua)
+	{
+		this.chooseFileDua.sendKeys(pathDua);
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+	}
+	
+	public WebElement getlblUploadDokumenTitle() {
+		return this.lblUploadDokumenTitle;
+	}
+	
+	public String txtSrcPreview(WebElement element) {
+		//	src="https://dev.ptdika.com/siloam/new_assets/noimage.png"
+		return element.getAttribute("src");
+	}
+	
+	public String txtResult() {
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+		return Utils.driverWaitTxt(driver, Constants.TIMEOUT, lblResult);
+	}
 }

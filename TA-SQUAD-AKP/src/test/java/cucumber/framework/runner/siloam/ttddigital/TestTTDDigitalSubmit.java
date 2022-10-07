@@ -32,7 +32,8 @@ public class TestTTDDigitalSubmit {
 		driver.get(Constants.URL_SILOAM);
 		ttdDigital.login(Constants.USERNAME_SALES_SILOAM, Constants.PASSWORD_SALES_SILOAM);
 		ttdDigital.btnLogin();
-		driver.get("https://dev.ptdika.com/siloam/sales/input/ttd_digital2/315");
+//		driver.get("https://dev.ptdika.com/siloam/sales/input/ttd_digital2/315");
+		driver.get("https://dev.ptdika.com/siloam/sales/input/ttd_digital2/32");
 		extentTest.log(LogStatus.PASS, "Siloam220 Sales Sudah Login");
 	    // https://dev.ptdika.com/siloam/sales/input/ttd_digital2/315
 	}

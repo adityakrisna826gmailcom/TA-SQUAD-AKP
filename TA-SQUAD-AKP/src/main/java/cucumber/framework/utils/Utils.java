@@ -1,14 +1,18 @@
 package cucumber.framework.utils;
 
 import java.awt.AWTException;
+import java.awt.Color;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 import java.util.Random;
+
+import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -248,22 +252,58 @@ public class Utils {
 			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 			robot.keyPress(KeyEvent.VK_DOWN);
 			robot.keyRelease(KeyEvent.VK_DOWN);
-			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+//			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		}
 		
 		for(int i =0; i < enter; i++)
 		{
+			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-			Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
+			
 		}
 	}
 	
-//	public static void rightClick(String element)
-//	{
-//		Actions actions = new Actions(driver);
-//		WebElement elementLocator = driver.findElement(By.linkText(element));
-//		actions.contextClick(elementLocator).perform();
-//	}
+	public static void rightClick(WebElement element, WebDriver driver)
+	{
+		Actions actions = new Actions(driver);
+		actions.contextClick(element).perform();
+	}
+	
+	public static String compareImage(String pathImg1, String pathImg2) throws IOException{
+		BufferedImage img1 = ImageIO.read(new File(pathImg1));
+        BufferedImage img2 = ImageIO.read(new File(pathImg2));
+        int w1 = img1.getWidth();
+        int w2 = img2.getWidth();
+        int h1 = img1.getHeight();
+        int h2 = img2.getHeight();
+        long diff = 0;
+	      
+        for (int j = 0; j < h1; j++) {
+          for (int i = 0; i < w1; i++) {
+             //Getting the RGB values of a pixel
+             int pixel1 = img1.getRGB(i, j);
+             Color color1 = new Color(pixel1, true);
+             int r1 = color1.getRed();
+             int g1 = color1.getGreen();
+             int b1 = color1.getBlue();
+             int pixel2 = img2.getRGB(i, j);
+             Color color2 = new Color(pixel2, true);
+             int r2 = color2.getRed();
+             int g2 = color2.getGreen();
+             int b2= color2.getBlue();
+             //sum of differences of RGB values of the two images
+             long data = Math.abs(r1-r2)+Math.abs(g1-g2)+ Math.abs(b1-b2);
+             diff = diff+data;
+          }
+        }
+        
+        double avg = diff/(w1*h1*3);
+        double percentage = (avg/255)*100;
+//      System.out.println("Difference: "+percentage);
+        String strPersentage = Double.toString(percentage);
+        System.out.println(strPersentage);
+        return strPersentage;
+	}
 	
 }

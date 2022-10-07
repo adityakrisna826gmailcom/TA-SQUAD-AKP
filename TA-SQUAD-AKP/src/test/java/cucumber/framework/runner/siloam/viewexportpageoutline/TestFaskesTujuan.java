@@ -1,5 +1,7 @@
 package cucumber.framework.runner.siloam.viewexportpageoutline;
 
+import static org.testng.Assert.assertTrue;
+
 import java.awt.AWTException;
 import java.io.IOException;
 
@@ -36,8 +38,7 @@ public class TestFaskesTujuan {
 	public TestFaskesTujuan() throws IOException {
 		driver = ViewExportHooksOutline.driver;
 		extentTest = ViewExportHooksOutline.extentTest;
-		Utils.deleteFile("C:\\Users\\NEXSOFT\\Downloads\\350_After_6ae66d27de999857d951a4bbd843af43.png");
-//		Utils.deleteFile("");
+//		Utils.deleteFile("C:\\Users\\NEXSOFT\\Downloads\\25_After_79a852a69a56998a45e9eb998ad98b05.jpeg");
 	}
 	
 	@Given("Siloam060 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter")
@@ -46,17 +47,20 @@ public class TestFaskesTujuan {
 		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM, Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
-	    viewExportPage.filter("2022-09-14", "2022-09-18");
+	    viewExportPage.filter("2022-10-07", "2022-10-07");
 	    extentTest.log(LogStatus.PASS, "Siloam060 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
 	}
 
 	@When("Siloam060 Admin Tekan Link Faskes Tujuan")
-	public void siloam060_admin_tekan_link_faskes_tujuan() throws AWTException {
-		Actions actions = new Actions(driver);
-		WebElement elementLocator = driver.findElement(By.linkText("Foto Faskes Tujuan"));
-		actions.contextClick(elementLocator).perform();
+	public void siloam060_admin_tekan_link_faskes_tujuan() throws AWTException, IOException {
+		Utils.delay(Constants.TIMEOUT_DELAY, Constants.GLOB_PARAM_DELAY);
 		
-//		Utils.rightClick("Foto Faskes Awal");
+		String txtSrc = viewExportPage.txtHrefPreview(viewExportPage.getFaskesTujuan());
+		String getNamePic = txtSrc.substring(txtSrc.length()-46,txtSrc.length());
+		System.out.println(getNamePic);
+		Utils.deleteFile("C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\" + getNamePic);
+		
+		viewExportPage.rightClickFaskesTujuan();
 		
 		Utils.tabEnterDown(0, 4, 2);
 		
@@ -66,7 +70,19 @@ public class TestFaskesTujuan {
 
 	@Then("Siloam060 Validasi Gambar Faskes Tujuan")
 	public void siloam060_validasi_gambar_faskes_tujuan() {
-	    // Write code here that turns the phrase above into concrete actions
-//	    throw new io.cucumber.java.PendingException();
+		String pathWebPicBefore = "C:\\Users\\" + Constants.USER_COMPUTER_NAME + "\\Downloads\\574_After_37088a4e9bb4c18bcb8f000978097d19.jpg";
+		String pathRealPicBefore = "C:\\Users\\NEXSOFT\\Documents\\Bootcamp\\TA\\Gambar\\Upload Foto Faskes Tujuan.jpg";
+		
+		driver.get(Constants.URL_IMG_ONLINE);
+		
+		viewExportPage.inputChooseFileSatu(pathWebPicBefore);
+		viewExportPage.inputChooseFileDua(pathRealPicBefore);
+		viewExportPage.btnOK();
+		
+		String sub = viewExportPage.txtResult().toString().substring(0,4);
+		double dNum = Double.parseDouble(sub);
+		
+		assertTrue(dNum > 90);
+		extentTest.log(LogStatus.PASS, "Siloam060 Validasi Gambar Faskes Tujuan");
 	}
 }
