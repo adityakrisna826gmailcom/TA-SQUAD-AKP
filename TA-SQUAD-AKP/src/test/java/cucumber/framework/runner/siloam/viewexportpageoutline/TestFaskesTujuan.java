@@ -47,7 +47,7 @@ public class TestFaskesTujuan {
 		viewExportPage.login(Constants.USERNAME_ADMIN_SILOAM, Constants.PASSWORD_ADMIN_SILOAM);
 	    viewExportPage.btnLogin();
 	    viewExportPage.btnViewExport();
-	    viewExportPage.filter("2022-10-07", "2022-10-07");
+	    viewExportPage.filter("2022-10-08", "2022-10-08");
 	    extentTest.log(LogStatus.PASS, "Siloam060 Admin Berada Di Halaman View Export Dan Sudah Tekan Filter");
 	}
 

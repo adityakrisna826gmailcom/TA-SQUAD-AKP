@@ -60,8 +60,11 @@ public class TTDDigitalPage extends FormReturnPage {
 	
 	@FindBy(xpath = "//a[@class='btn btn-primary']")
 	private WebElement submit;
+	//div[@role='alert']
 	
-	@FindBy(xpath = "//div[@role='alert']") //TTD Digital Berhasil
+//	@FindBy(xpath = "//div[@role='alert']") //TTD Digital Berhasil
+//	private WebElement txtValidSubmit;
+	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]") //TTD Digital Berhasil
 	private WebElement txtValidSubmit;
 	
 	
